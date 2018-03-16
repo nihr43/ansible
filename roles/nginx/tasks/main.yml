@@ -1,0 +1,14 @@
+---
+ - name: Installing NGINX
+   pkgng: name=nginx state=present
+
+ - name: Configuring NGINX
+   template:
+    src: nginx.conf
+    dest: /usr/local/etc/nginx/nginx.conf
+    owner: root
+    group: wheel
+    mode: '0644'
+
+ - name: Enable NGINX
+   service: name=nginx enabled=yes

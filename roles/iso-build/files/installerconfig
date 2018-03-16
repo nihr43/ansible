@@ -1,0 +1,49 @@
+PARTITIONS=vtbd0
+DISTRIBUTIONS="kernel.txz base.txz"
+
+#!/bin/sh
+
+echo "==> Running installerconfig"
+
+echo "==> Raising network"
+ifconfig vtnet0 up
+dhclient vtnet0
+
+echo "==> Installing pkg"
+env ASSUME_ALWAYS_YES=YES pkg update
+
+echo "==> Writing rc.conf"
+## we need a unique hostname
+UUID=$(ifconfig vtnet0 | grep hwaddr | awk '{print $2}' | awk -F ':' '{print $4$5$6}')
+
+cat > /etc/rc.conf << RC_CONF
+hostname="$UUID"
+ifconfig_vtnet0="DHCP"
+sshd_enable="YES"
+clear_tmp_enable="YES"
+syslogd_flags="-ss"
+sendmail_enable="NONE"
+dumpdev="NO"
+ntpd_enable="YES"
+ntpdate_enable="YES"
+ntpdate_flags="pool.ntp.org"
+RC_CONF
+
+echo "==> Configuring ssh"
+cat > /etc/ssh/sshd_config << SSHD_CONFIG
+PermitRootLogin without-password
+PasswordAuthentication no
+UsePAM no
+Subsystem	sftp	/usr/libexec/sftp-server
+SSHD_CONFIG
+
+mkdir /root/.ssh
+cat > /root/.ssh/authorized_keys << AUTH_KEY
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDKjBV0Gk1HmK1u/s+v224121YpzJ7eSDSW+ewRWAl4AGlV/ynYnH/Zo+wKIOZwaMy3bVfoBOunvz1fGNU9p0f577vyzkuNd/BHQCy2DPiwTac8GuWQG9Ojj+jilTUtKHjY/MsO31z/MrZr5mPa7uAAoE6/Jkr/eGO0Cr+3EIGz8ZMSFkr6f61oCUTo1zju8P3QkhK5RAz006HQA38TC+3d92zYFAlsjE2dg3zpSFEvgV4f2Zi5POm+MFJ8njCfyasDFgX8Q4FbMbmeL/6SwUCyqg3xa0ybDJQaO7LnChwkdEoB+xKRRuTLxG8TV4TGkCDl9vXNWH4SDorx9Z/SapGl nathan_master
+AUTH_KEY
+
+echo "==> Updating system"
+env PAGER=cat freebsd-update fetch
+env PAGER=cat freebsd-update install
+
+reboot

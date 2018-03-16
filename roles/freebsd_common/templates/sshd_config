@@ -1,0 +1,4 @@
+PermitRootLogin without-password
+PasswordAuthentication no
+UsePAM no
+Subsystem	sftp	/usr/libexec/sftp-server

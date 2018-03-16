@@ -1,0 +1,9 @@
+---
+ - name: Install bro IDS
+   pkgng: name=bro state=present
+
+ - name: Fetch GeoIP Database
+   copy:
+    src: GeoLiteCity.dat
+    dest: /usr/local/share/GeoIP/GeoIPCity.dat
+    force: no

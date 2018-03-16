@@ -1,0 +1,3 @@
+---
+ - name: Install iperf
+   pkgng: name=iperf state=present

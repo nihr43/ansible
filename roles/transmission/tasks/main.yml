@@ -1,0 +1,14 @@
+---
+ - name: install transmission
+   pkgng: name=transmission-daemon,transmission-web state=present
+
+ - name: configure transmission
+   template:
+    src: settings.json
+    dest: /usr/local/etc/transmission/home/settings.json
+    owner: transmission
+    group: transmission
+    mode: '0600'
+
+ - name: enable transmission
+   service: name=transmission enabled=yes
