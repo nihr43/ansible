@@ -1,0 +1,5 @@
+---
+ - name: restart routing
+   service: name=routing state=restarted
+   listen: "restart routing"
+   ignore_errors: yes
