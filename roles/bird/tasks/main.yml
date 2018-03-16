@@ -1,0 +1,6 @@
+---
+ - name: install bird
+   pkgng: name=bird state=present
+
+ - name: enable bird
+   service: name=bird enabled=yes

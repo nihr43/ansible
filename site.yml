@@ -3,14 +3,6 @@
    roles:
     - bhyve_guests
 
- - hosts: 192.168.1.201
+ - hosts: 2910-l0, 2910-l1, 2910-l2, 2910-s0, 2910-s1
    roles:
-    - nginx
-
- - hosts: pico
-   roles:
-    - nginx
-
- - hosts: transmission
-   roles:
-    - transmission
+    - bird
