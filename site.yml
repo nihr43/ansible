@@ -3,6 +3,18 @@
    roles:
     - bhyve_guests
 
- - hosts: 2910-l0, 2910-l1, 2910-l2, 2910-s0, 2910-s1
+ - hosts: 2910-fw0
    roles:
     - bird
+
+ - hosts: 2910-s0, 2910-s1
+   roles:
+    - bird_spine
+
+ - hosts: 2910-l0, 2910-l1, 2910-l2
+   roles:
+    - bird_leaf
+
+ - hosts: 2910-l0, 2910-l1, 2910-l2
+   roles:
+    - dhcp_server

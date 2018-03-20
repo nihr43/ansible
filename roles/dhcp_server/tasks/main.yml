@@ -1,0 +1,17 @@
+---
+ - name: install isc-dhcp43-server
+   pkgng: name=isc-dhcp43-server state=present
+
+ - name: enable isc-dhcp43-server
+   service: name=isc-dhcpd enabled=yes
+
+ - name: configure isc-dhcp43-server
+   template: 
+    src: dhcpd.conf.j2
+    dest: /usr/local/etc/dhcpd.conf
+    owner: root
+    group: wheel
+    mode: 0644
+
+ - name: set dhcp server interface
+   lineinfile: dest=/etc/rc.conf insertafter=EOF line='dhcpd_ifaces="vtnet3"'

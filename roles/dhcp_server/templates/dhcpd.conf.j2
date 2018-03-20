@@ -1,0 +1,12 @@
+#option domain-name "example.org";
+option domain-name-servers 8.8.8.8;
+option subnet-mask 255.255.255.0;
+
+default-lease-time 600;
+max-lease-time 72400;
+ddns-update-style none;
+
+subnet {{ ansible_vtnet3.ipv4[0].network }} netmask 255.255.255.0 {
+  range {{ ansible_vtnet3.ipv4[0].address }} {{ ansible_vtnet3.ipv4[0].broadcast }};
+  option routers {{ ansible_vtnet3.ipv4[0].address }};
+}

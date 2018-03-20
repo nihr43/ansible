@@ -1,0 +1,8 @@
+---
+ - name: configure bird as ospf leaf
+   template: 
+    src: bird.conf.j2
+    dest: /usr/local/etc/bird.conf
+    owner: root
+    group: wheel
+    mode: 0644

@@ -1,0 +1,10 @@
+---
+ - name: install bird
+   pkgng: name=bird state=present
+
+ - name: enable bird
+   service: name=bird enabled=yes
+
+ - name: enable packet forwarding
+   lineinfile: dest=/etc/rc.conf insertafter=EOF line='gateway_enable="YES"'
+   notify: restart routing
