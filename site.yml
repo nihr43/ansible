@@ -17,4 +17,8 @@
 
  - hosts: 2910-l0, 2910-l1, 2910-l2
    roles:
-    - dhcp_server
+    - leaf_dhcp_server
+
+ - hosts: 2910-mgmt-gw
+   roles:
+    - nat_dhcp_gw

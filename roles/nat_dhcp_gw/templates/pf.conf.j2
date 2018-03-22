@@ -1,0 +1,6 @@
+ext_if = "vtnet0"
+int_if = "vtnet1"
+
+localnet = "{{ ansible_vtnet1.ipv4[0].network }}/24"
+nat on $ext_if from $localnet to any -> ($ext_if)
+pass in all

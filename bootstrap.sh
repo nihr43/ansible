@@ -7,7 +7,7 @@
 # here we ssh into hypervisor, grab mac address of guest, ssh into guest, set correct hostname
 
 
-UUID=$(ssh -o StrictHostKeyChecking=no 192.168.1.100 -- vm info $1 | grep "fixed-mac-address" | awk '{print $2}' | awk -F ':' '{print $4$5$6}')
+UUID=$(ssh -o StrictHostKeyChecking=no 192.168.1.100 -- vm info $1 | grep "fixed-mac-address" | awk '{print $2}' | awk -F ':' '{print $4$5$6}' | head -n1)
 UUID=$(echo -n $UUID".localdomain")
 ssh -o StrictHostKeyChecking=no $UUID -- pkg install -y python27
 
