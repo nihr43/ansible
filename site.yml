@@ -1,11 +1,11 @@
 ---
- - hosts: bhyve_guests
-   roles:
-    - bhyve_guests
-
  - hosts: freebsd_common
    roles:
     - freebsd_common
+
+ - hosts: bhyve_guests
+   roles:
+    - bhyve_guests
 
  - hosts: 2910-fw0
    roles:

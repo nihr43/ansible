@@ -1,5 +1,5 @@
 ---
- - name: Install Common Packages
+ - name: Install common packages
    pkgng: name=ca_root_nss,git,htop state=present
 
  - name: Write motd
@@ -10,7 +10,7 @@
     group: wheel
     mode: '0644'
 
- - name: Write sshd_config
+ - name: ensure sshd_config
    template:
     src: sshd_config
     dest: /etc/ssh/sshd_config
