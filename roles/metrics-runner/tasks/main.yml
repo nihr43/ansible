@@ -1,0 +1,25 @@
+---
+ - name: install net-snmp, git, curl
+   pkgng: name=net-snmp,git,curl state=present
+
+ - name: create periodic minutely
+   file:
+    path: /etc//periodic/minutely
+    state: directory
+    owner: root
+    group: wheel
+    mode: 0755
+
+ - name: configure cron
+   template: 
+    src: crontab
+    dest: /etc/crontab
+    owner: root
+    group: wheel
+    mode: 0644
+
+ - name: fetch git repo
+   git:
+    repo: https://github.com/nihr43/periodic-metrics.git
+    dest: /etc/periodic/minutely/
+    version: master

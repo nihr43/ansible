@@ -3,6 +3,10 @@
    roles:
     - bhyve_guests
 
+ - hosts: freebsd_common
+   roles:
+    - freebsd_common
+
  - hosts: 2910-fw0
    roles:
     - bird
@@ -22,3 +26,7 @@
  - hosts: 2910-mgmt-gw
    roles:
     - nat_dhcp_gw
+
+ - hosts: metrics-runner
+   roles:
+    - metrics-runner
