@@ -1,0 +1,16 @@
+---
+ - hosts: freebsd_common
+   roles:
+    - freebsd_common
+
+ - hosts: bhyve_guests
+   roles:
+    - bhyve_guests
+
+ - hosts: s0, s1
+   roles:
+    - bird_spine
+
+ - hosts: l0, l1, l2, l3, l4, l5
+   roles:
+    - bird_leaf

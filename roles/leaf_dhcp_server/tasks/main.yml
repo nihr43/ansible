@@ -16,6 +16,7 @@
 
  - name: enable isc-dhcp43-server
    service: name=isc-dhcpd enabled=yes
+   notify: start isc-dhcpd
 
  - name: configure isc-dhcp43-server
    template: 
@@ -24,6 +25,8 @@
     owner: root
     group: wheel
     mode: 0644
+   notify: restart isc-dhcpd
 
  - name: set dhcp server interface
-   lineinfile: dest=/etc/rc.conf insertafter=EOF line='dhcpd_ifaces="vtnet3"'
+   lineinfile: dest=/etc/rc.conf insertafter=EOF line='dhcpd_ifaces="vtnet1"'
+   notify: restart isc-dhcpd
