@@ -1,15 +1,18 @@
 ---
  - name: figure my location
-   shell: hostname | awk -F '-r' '{print $NF}'
+   shell: "hostname | awk -F '-r' '{print $NF}'"
    register: rack_num
 
- - name: figure my services address
-   shell: echo -n "172.16.{{ rack_num }}.2"
-   register: services_address
+ - debug: msg="rack_num is {{ rack_num.stdout }}"
 
- - name: figure address of my gateway
-   shell: echo -n "172.16.{{ rack_num }}.1"
-   register: gateway_address
+ - name: configure static address
+   lineinfile: dest=/etc/rc.conf insertafter=EOF line='ifconfig_vtnet1="172.16.{{ rack_num.stdout }}.2/24 up"'
+
+ - name: configure default route
+   lineinfile: dest=/etc/rc.conf insertafter=EOF line='dafaultrouter="172.16.{{ rack_num.stdout }}.1"'
+
+ - name: configure dns
+   lineinfile: dest=/etc/resolv.conf insertafter=EOF line='nameserver 8.8.8.8'
 
  - name: install isc-dhcp43-server
    pkgng: name=isc-dhcp43-server state=present

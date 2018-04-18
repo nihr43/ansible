@@ -6,7 +6,7 @@ default-lease-time 600;
 max-lease-time 72400;
 ddns-update-style none;
 
-subnet {{ ansible_vtnet3.ipv4[0].network }} netmask 255.255.255.0 {
-  range {{ ansible_vtnet3.ipv4[0].address }} {{ ansible_vtnet3.ipv4[0].broadcast }};
-  option routers {{ ansible_vtnet3.ipv4[0].address }};
+subnet 172.16.{{ rack_num.stdout }}.0 netmask 255.255.255.0 {
+  range 172.16.{{ rack_num.stdout }}.3 172.16.{{ rack_num.stdout }}.254;
+  option routers 172.16.{{ rack_num.stdout }}.1;
 }

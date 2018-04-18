@@ -1,10 +1,10 @@
 ---
  - name: start isc-dhcpd
-   service: isc-dhcpd state=started
+   service: name=isc-dhcpd state=started
    listen: "start isc-dhcpd"
    ignore_errors: yes
 
  - name: restart isc-dhcpd
-   service: isc-dhcpd state=restarted
+   service: name=isc-dhcpd state=restarted
    listen: "restart isc-dhcpd"
-   ignore_errors: ye
+   ignore_errors: yes

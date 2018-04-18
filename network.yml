@@ -14,3 +14,7 @@
  - hosts: l0, l1, l2, l3, l4, l5
    roles:
     - bird_leaf
+
+ - hosts: supervisor-r0, supervisor-r1, supervisor-r2, supervisor-r3, supervisor-r4, supervisor-r5
+   roles:
+    - leaf_dhcp_server
