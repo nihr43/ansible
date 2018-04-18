@@ -14,60 +14,40 @@ protocol device {
         scan time 10;           # Scan interfaces every 10 seconds
 }
 
-protocol static {
-#       disabled;               # Disable by default
-#       table testable;         # Connect to a non-default table
-#       preference 1000;        # Default preference of routes
-#       debug { states, routes, filters, interfaces, events, packets };
-#       debug all;
-#       route 0.0.0.0/0 via 198.51.100.13;
-#       route 198.51.100.0/25 unreachable;
-#       route 10.2.0.0/24 via "arc0";
-}
-
-
-protocol ospf MyOSPF {
+protocol ospf dc_fabric {
         tick 2;
         rfc1583compat yes;
         area 0.0.0.0 {
                 stub no;
-                networks {
-                        {{ansible_vtnet1.ipv4[0].network}}/30;
-                        {{ansible_vtnet2.ipv4[0].network}}/30;
-                        {{ansible_vtnet3.ipv4[0].network}}/30;
-                };
                 interface "vtnet1" {
-                        hello 9;
-                        retransmit 6;
-                        cost 10;
-                        transmit delay 5;
-                        dead count 5;
-                        wait 50;
                         type ptp;
-                        authentication simple;
-                        password "pass";
+                        authentication cryptographic;
+                        password "1df541e7ca979a52849d7acbac17559e";
                 };
                 interface "vtnet2" {
-                        hello 9;
-                        retransmit 6;
-                        cost 10;
-                        transmit delay 5;
-                        dead count 5;
-                        wait 50;
                         type ptp;
-                        authentication simple;
-                        password "pass";
+                        authentication cryptographic;
+                        password "1df541e7ca979a52849d7acbac17559e";
                 };
                 interface "vtnet3" {
-                        hello 9;
-                        retransmit 6;
-                        cost 10;
-                        transmit delay 5;
-                        dead count 5;
-                        wait 50;
                         type ptp;
-                        authentication simple;
-                        password "pass";
+                        authentication cryptographic;
+                        password "1df541e7ca979a52849d7acbac17559e";
+                };
+                interface "vtnet4" {
+                        type ptp;
+                        authentication cryptographic;
+                        password "1df541e7ca979a52849d7acbac17559e";
+                };
+                interface "vtnet5" {
+                        type ptp;
+                        authentication cryptographic;
+                        password "1df541e7ca979a52849d7acbac17559e";
+                };
+                interface "vtnet6" {
+                        type ptp;
+                        authentication cryptographic;
+                        password "1df541e7ca979a52849d7acbac17559e";
                 };
         };
 }

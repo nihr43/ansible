@@ -1,4 +1,11 @@
 ---
+ - name: install bird
+   pkgng: name=bird state=present
+
+ - name: enable packet forwarding
+   lineinfile: dest=/etc/rc.conf insertafter=EOF line='gateway_enable="YES"'
+   notify: restart routing   
+
  - name: configure bird as ospf leaf
    template: 
     src: bird.conf.j2
@@ -6,3 +13,8 @@
     owner: root
     group: wheel
     mode: 0644
+   notify: reload bird
+
+ - name: enable bird
+   service: name=bird enabled=yes
+   notify: start bird
