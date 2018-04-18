@@ -1,4 +1,16 @@
 ---
+ - name: figure my location
+   shell: hostname | awk -F '-r' '{print $NF}'
+   register: rack_num
+
+ - name: figure my services address
+   shell: echo -n "172.16.{{ rack_num }}.2"
+   register: services_address
+
+ - name: figure address of my gateway
+   shell: echo -n "172.16.{{ rack_num }}.1"
+   register: gateway_address
+
  - name: install isc-dhcp43-server
    pkgng: name=isc-dhcp43-server state=present
 
