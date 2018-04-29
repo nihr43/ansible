@@ -1,0 +1,44 @@
+
+## This file templated by ansible
+
+# Override router ID
+router id {{ ansible_vtnet0.ipv4[0].address }};
+
+protocol kernel {
+        persist;                # Don't remove routes on bird shutdown
+        scan time 20;           # Scan kernel routing table every 20 seconds
+        export all;             # Default is export none
+}
+
+protocol device {
+        scan time 10;           # Scan interfaces every 10 seconds
+}
+
+protocol static {
+        route 0.0.0.0/0 via 10.254.254.1;
+}
+
+filter ospf_export {
+     if net ~ [ 0.0.0.0/0 ] then {
+        accept;
+    }
+    reject;
+}
+
+protocol ospf dc_fabric {
+        tick 2;
+        rfc1583compat yes;
+	export filter ospf_export; 
+        area 0.0.0.0 {
+                interface "vtnet1" {
+                        type ptp;
+                        authentication cryptographic;
+                        password "1df541e7ca979a52849d7acbac17559e";
+                };
+		interface "vtnet2" {
+                        type broadcast;
+                        authentication cryptographic;
+                        password "1df541e7ca979a52849d7acbac17559e";
+                };
+        };
+}
