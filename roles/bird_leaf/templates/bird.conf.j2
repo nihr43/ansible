@@ -16,10 +16,8 @@ protocol device {
 
 protocol ospf dc_fabric {
         tick 2;
-        rfc1583compat yes;
-	stub router yes;	# ask others not use me as transit
+#	stub router yes;	# ask others not use me as transit
         area 0.0.0.0 {
-                stub no;
                 networks {
                         {{ansible_vtnet1.ipv4[0].network}}/24;
                 };

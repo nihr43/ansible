@@ -1,4 +1,0 @@
----
- - hosts: kernel-update-1, kernel-update-2, kernel-update-3, kernel-update-4, r-cran
-   roles:
-    - fetch_kernel
