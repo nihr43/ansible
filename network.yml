@@ -22,3 +22,8 @@
  - hosts: fw-72bb6d-r0, fw-d5906d-r3
    roles:
     - ospf_firewall
+
+ - hosts: canaries
+   roles:
+    - canaries
+
