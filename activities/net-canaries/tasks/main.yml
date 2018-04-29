@@ -1,0 +1,13 @@
+---
+ - hosts: '{{ target }}'
+   tasks:
+
+   - name: figure my location
+     shell: "hostname | awk -F '-r' '{print $NF}'"
+     register: rack_num
+
+   - name: nmap my gateway
+     shell: nmap 172.16.{{ rack_num.stdout }}.1 | grep open
+     register: open_ports
+
+   - debug: msg="open ports on my gateway are {{ open_ports.stdout }}"
