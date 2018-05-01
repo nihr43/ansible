@@ -6,8 +6,25 @@
      shell: "hostname | awk -F '-r' '{print $NF}'"
      register: rack_num
 
+   - name: check on my supervisor
+     shell: nmap -sU -p 67 172.16.{{ rack_num.stdout }}.2 | grep dhcp
+     register: msg
+     failed_when: "'closed' in msg.stdout"
+   - debug: msg="{{ msg.stdout }}"
+
    - name: nmap my gateway
      shell: nmap 172.16.{{ rack_num.stdout }}.1 | grep open
      register: open_ports
-
    - debug: msg="open ports on my gateway are {{ open_ports.stdout }}"
+
+   - name: trace my route
+     shell: if [ `traceroute 10.254.254.1 | wc -l` -gt 5 ] ; then echo "my upstream route exceeds 5 hops, something may be wrong"; else echo "my upstream route is within spec"; fi
+     register: msg
+     failed_when: "'exceeds' in msg.stdout"
+   - debug: msg="{{ msg.stdout }}"
+
+
+#   - name: get variables
+#     debug: var=hostvars[inventory_hostname]
+
+
