@@ -18,3 +18,23 @@
  - name: enable bird
    service: name=bird enabled=yes
    notify: start bird
+
+ - name: configure pf
+   template:
+    src: pf.conf.j2
+    dest: /etc/pf.conf
+    owner: root
+    group: wheel
+    mode: 0644
+   notify: reload pf
+
+ - name: enable pf
+   service: name=pf enabled=yes
+   notify: start pf
+
+ - name: configure pfsync syncdev
+   lineinfile: dest=/etc/rc.conf insertafter=EOF line='pfsync_syncdev="vxlan0"'
+
+ - name: enable pfsync
+   service: name=pfsync enabled=yes
+   notify: restart pf

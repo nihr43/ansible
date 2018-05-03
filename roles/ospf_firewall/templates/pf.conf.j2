@@ -1,0 +1,28 @@
+internal="vtnet1"
+external="vtnet2"
+ospf_ints="{ vtnet1, vtnet2 }"
+mgmt="vtnet0"
+pfsync="vxlan0"
+localnets="{ 172.16.0.0/12, 10.0.0.0/8 }"
+
+#default block all
+block all
+
+# allow anything in and out of management and pfsync interfaces
+set skip on $pfsync
+set skip on $mgmt
+
+# allow ospf traffic to me
+pass in quick on $ospf_ints proto ospf all
+pass out quick on $ospf_ints proto ospf all
+pass in quick on $ospf_ints from 224.0.0.0/4 to any
+pass out quick on $ospf_ints from 224.0.0.0/4 to any
+
+# allow any connection originating from local networks
+pass in on $internal proto { tcp, udp, icmp } from $localnets
+pass out on $external proto { tcp, udp, icmp } from any to any modulate state
+
+
+
+pass inet proto icmp from any to any
+pass inet proto { udp, tcp } from $localnets

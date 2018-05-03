@@ -13,3 +13,18 @@
    service: name=bird state=reloaded
    listen: "reload bird"
    ignore_errors: yes
+
+ - name: start pf
+   service: name=pf state=started
+   listen: "start pf"
+   ignore_errors: yes
+
+ - name: restart pf
+   service: name=pf state=restarted
+   listen: "restart pf"
+   ignore_errors: yes
+
+ - name: reload pf
+   service: name=pf state=reloaded
+   listen: "reload pf"
+   ignore_errors: yes
