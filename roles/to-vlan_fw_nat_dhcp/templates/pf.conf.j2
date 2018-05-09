@@ -1,0 +1,10 @@
+ext_if = "vtnet0"
+int_if = "vlan101"
+localnet = vlan101:network
+
+set skip on lo0
+
+nat on $ext_if from $localnet to any -> ($ext_if)
+
+block in all
+pass from { $ext_if, $localnet } to any keep state

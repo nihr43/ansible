@@ -1,0 +1,31 @@
+---
+ - name: enable pf
+   service: name=pf enabled=yes
+
+ - name: configure pf as nat
+   template:
+    src: pf.conf.j2
+    dest: /etc/pf.conf
+    owner: root
+    group: wheel
+    mode: 0644
+
+ - name: enable routing
+   lineinfile: dest=/etc/rc.conf insertafter=EOF line='gateway_enable="YES"'
+
+ - name: install isc-dhcp43-server
+   pkgng: name=isc-dhcp43-server state=present
+
+ - name: configure isc-dhcp43-server
+   template:
+    src: dhcpd.conf.j2
+    dest: /usr/local/etc/dhcpd.conf
+    owner: root
+    group: wheel
+    mode: 0644
+
+ - name: enable isc-dhcp43-server
+   service: name=isc-dhcpd enabled=yes
+
+ - name: set dhcp server interface
+   lineinfile: dest=/etc/rc.conf insertafter=EOF line='dhcpd_ifaces="vlan101"'
