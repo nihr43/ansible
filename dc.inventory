@@ -7,33 +7,11 @@ bhyve_services
 network
 
 [bhyve_services]
+79c5ba-fw
 metrics-runner
 iso-builder
 util
 jm
-
-[network]
-app-21f6ee-r2
-app-4b4424-r3
-app-79619d-r1
-app-80d7e6-r3
-app-ac73fb-r3
-app-c9f51d-r0
-app-ca5b61-r5
-app-d81dc6-r2
-app-f293ae-r5
-app-f4ae2e-r1
-
-[network:children]
-canaries
-
-[canaries]
-canary-19af64-r0
-canary-2aa2f8-r4
-canary-a7fb71-r5
-canary-bed2bb-r1
-canary-ce33be-r4
-canary-d72535-r0
 
 [jails]
 192.168.1.56

@@ -28,4 +28,4 @@
    service: name=isc-dhcpd enabled=yes
 
  - name: set dhcp server interface
-   lineinfile: dest=/etc/rc.conf insertafter=EOF line='dhcpd_ifaces="vtnet1"'
+   lineinfile: dest=/etc/rc.conf insertafter=EOF line='dhcpd_ifaces="vlan101"'
