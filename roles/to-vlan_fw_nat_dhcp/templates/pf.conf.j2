@@ -2,9 +2,11 @@ ext_if = "vtnet0"
 int_if = "vlan101"
 localnet = vlan101:network
 
+set block-policy drop
 set skip on lo0
-
+scrub in on $ext_if
 nat on $ext_if from $localnet to any -> ($ext_if)
 
-block in all
-pass from { $ext_if, $localnet } to any keep state
+block all
+pass in on $int_if from $localnet
+pass out from { $ext_if $localnet } to any keep state

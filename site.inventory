@@ -7,17 +7,22 @@ bhyve_services
 network
 
 [bhyve_services]
+vm-bhyve
 79c5ba-fw
-metrics-runner
 iso-builder
 util
 jm
 
 [jails]
+plex
+grafana
+util-jail
 192.168.1.56
 192.168.1.60
 192.168.1.62
-
+192.168.1.52	#freebsd-src
+192.168.1.63	#metrics
+192.168.1.67	#metrics-runner
 
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python2.7
