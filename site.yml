@@ -26,3 +26,7 @@
  - hosts: jailwerld
    roles:
     - vimage_host
+
+ - hosts: pleex
+   roles:
+    - plex

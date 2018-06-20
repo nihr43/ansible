@@ -1,0 +1,17 @@
+---
+ - name: Installing nginx, plex
+   pkgng: name=nginx,plexmediaserver state=present
+
+ - name: Configuring NGINX
+   template:
+    src: nginx.conf
+    dest: /usr/local/etc/nginx/nginx.conf
+    owner: root
+    group: wheel
+    mode: '0644'
+
+ - name: Enable plex
+   service: name=plexmediaserver enabled=yes
+
+ - name: Enable nginx
+   service: name=nginx enabled=yes

@@ -30,6 +30,7 @@ util-jail
 192.168.1.52	#freebsd-src
 192.168.1.63	#metrics
 192.168.1.67	#metrics-runner
+pleex
 
 [physical]
 rc1
