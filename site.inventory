@@ -33,5 +33,7 @@ util-jail
 
 [physical]
 rc1
+jailwerld
+
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python2.7

@@ -25,3 +25,11 @@
     owner: root
     group: wheel
     mode: '0644'
+
+ - name: enable del for root
+   template:
+    src: cshrc
+    dest: /root/.cshrc
+    owner: root
+    group: wheel
+    mode: '0644'

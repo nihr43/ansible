@@ -22,3 +22,7 @@
  - hosts: 79c5ba-fw
    roles:
     - to-vlan_fw_nat_dhcp
+
+ - hosts: jailwerld
+   roles:
+    - vimage_host

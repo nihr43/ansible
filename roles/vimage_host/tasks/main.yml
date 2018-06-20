@@ -1,0 +1,11 @@
+---
+ - name: enable jails
+   lineinfile: dest=/etc/rc.conf insertafter=EOF line='jail_enable="YES"'
+
+ - name: configure devfs to allow dhcp
+   template: 
+    src: devfs.rules
+    dest: /etc/defaults/devfs.rules
+    owner: root
+    group: wheel
+    mode: 0644
