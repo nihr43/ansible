@@ -1,6 +1,7 @@
 [freebsd_common:children]
 bhyve_guests
 jails
+physical
 
 [bhyve_guests:children]
 bhyve_services
@@ -30,5 +31,7 @@ util-jail
 192.168.1.63	#metrics
 192.168.1.67	#metrics-runner
 
+[physical]
+rc1
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python2.7
