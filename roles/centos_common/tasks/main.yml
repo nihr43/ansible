@@ -1,0 +1,30 @@
+---
+ - name: Install EPEL
+   yum: name=epel-release state=present
+
+ - name: Install common packages
+   yum: name=git,htop,vim state=present
+
+ - name: Write motd
+   template:
+    src: motd
+    dest: /etc/motd
+    owner: root
+    group: wheel
+    mode: '0644'
+
+ - name: ensure sshd_config
+   template:
+    src: sshd_config
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: wheel
+    mode: '0644'
+
+ - name: write vimrc
+   template:
+    src: vimrc
+    dest: /root/.vimrc
+    owner: root
+    group: wheel
+    mode: '0644'

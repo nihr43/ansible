@@ -3,6 +3,10 @@
    roles:
     - freebsd_common
 
+ - hosts: centos_common
+   roles:
+    - centos_common
+
  - hosts: bhyve_guests
    roles:
     - bhyve_guests
@@ -15,9 +19,9 @@
    roles:
     - metrics-runner
 
- - hosts: 192.168.1.60
+ - hosts: kickstart
    roles:
-    - nginx_proxy
+    - nginx
 
  - hosts: 79c5ba-fw
    roles:
@@ -27,6 +31,10 @@
    roles:
     - vimage_host
 
- - hosts: pleex
+ - hosts: plex
    roles:
     - plex
+
+ - hosts: 0a5647
+   roles:
+    - centos_mariadb

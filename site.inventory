@@ -1,3 +1,8 @@
+[centos_common]
+0a5647
+
+
+
 [freebsd_common:children]
 bhyve_guests
 jails
@@ -15,6 +20,7 @@ util
 jm
 
 [jails]
+kickstart
 minio-1
 minio-2
 minio-3
@@ -30,7 +36,7 @@ util-jail
 192.168.1.52	#freebsd-src
 192.168.1.63	#metrics
 192.168.1.67	#metrics-runner
-pleex
+pkg
 
 [physical]
 rc1
