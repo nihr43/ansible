@@ -11,6 +11,10 @@
    roles:
     - bhyve_guests
 
+ - hosts: minio-1, minio-2, minio-3, minio-4, minio-5
+   roles:
+    - minio
+
  - hosts: rc1
    roles:
     - desktop

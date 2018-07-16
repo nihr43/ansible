@@ -1,7 +1,5 @@
 [centos_common]
-0a5647
-
-
+docker
 
 [freebsd_common:children]
 bhyve_guests
@@ -16,27 +14,21 @@ network
 vm-bhyve
 79c5ba-fw
 iso-builder
-util
 jm
 
 [jails]
+docker
 kickstart
+telegraf
+plex
+grafana
+util
+pkg
 minio-1
 minio-2
 minio-3
 minio-4
 minio-5
-telegraf
-plex
-grafana
-util-jail
-192.168.1.56
-192.168.1.60
-192.168.1.62
-192.168.1.52	#freebsd-src
-192.168.1.63	#metrics
-192.168.1.67	#metrics-runner
-pkg
 
 [physical]
 rc1

@@ -1,0 +1,14 @@
+---
+ - name: install minio
+   pkgng: name=minio state=present
+
+ - name: configure keys
+   template: 
+    src: config.json
+    dest: /usr/local/etc/minio/config.json
+    owner: root
+    group: wheel
+    mode: 0644
+
+ - name: enable minio
+   service: name=minio enabled=no
