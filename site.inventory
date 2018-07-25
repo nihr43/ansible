@@ -1,5 +1,4 @@
 [centos_common]
-docker
 
 [freebsd_common:children]
 bhyve_guests
@@ -8,31 +7,18 @@ physical
 
 [bhyve_guests:children]
 bhyve_services
-network
 
 [bhyve_services]
-vm-bhyve
-79c5ba-fw
-iso-builder
-jm
 
 [jails]
-docker
-kickstart
-telegraf
-plex
-grafana
+vm
 util
-pkg
-minio-1
-minio-2
-minio-3
-minio-4
-minio-5
+python-api
+kickstart
+plex
 
 [physical]
-rc1
-jailwerld
+192.168.1.200 #jailwerld
 
 [freebsd_common:vars]
-ansible_python_interpreter=/usr/local/bin/python2.7
+ansible_python_interpreter=/usr/local/bin/python3

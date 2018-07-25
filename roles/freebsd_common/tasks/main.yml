@@ -1,6 +1,6 @@
 ---
  - name: Install common packages
-   pkgng: name=ca_root_nss,git,htop,vim-tiny state=present
+   package: name=ca_root_nss,git,htop,vim-tiny,python3 state=present
 
  - name: Write motd
    template:
