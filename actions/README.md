@@ -1,23 +1,26 @@
 
-these are playbooks for purposes other than config management such as tests, updates, reboots...
+These are plays for purposes other than provisioning / config management - such as updates, or ad-hoc tests of the state of the network.
 
+The command to run something against a single host looks like the following:
 
-command to run these will look like
-
-ansible-playbook user.yml --extra-vars "target=imac-2.local"
-
-
+```sh
+ansible-playbook ./update/main.yml --extra-vars "target=server.localdomain"
+```
 
 a single activiy may look like....
 
+```yaml
 ---
 - hosts: '{{ target }}'
-  stuff:
+  tasks:
 
+  - name: figure my location
+    shell: "hostname | awk -F '-r' '{print $NF}'"
+    register: rack_num
+```
 
+groups from hosts file can be targeted:
 
-
-
-groups from hosts file can be targeted, and no target is safe
-
-ansible-playbook user.yml --extra-vars "target=office" --list-hosts
+```sh
+ansible-playbook -i ../../inventory ./update/main.yml --extra-vars "target=office" --list-hosts
+```
