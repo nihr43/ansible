@@ -1,19 +1,7 @@
-[centos_common]
-
 [freebsd_common:children]
-bhyves
-jails
-physical
+hypervisors
 
-[bhyves]
-10.0.0.251
-10.0.0.252
-10.0.0.253
-
-[jails]
-
-
-[physical]
+[hypervisors]
 
 
 [freebsd_common:vars]

@@ -22,13 +22,5 @@ supervisor-r5
 fw-72bb6d-r0
 fw-d5906d-r3
 
-[network:children]
-canaries
-
-[canaries]
-canary-19af64-r0
-canary-2aa2f8-r4
-canary-a7fb71-r5
-
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python2.7
