@@ -1,3 +1,0 @@
----
- - name: Install GlusterFS
-   pkgng: name=glusterfs state=present

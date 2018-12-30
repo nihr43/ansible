@@ -1,3 +1,0 @@
----
- - name: Installing Hypervisor Packages
-   pkgng: name=vm-bhyve,grub2-bhyve,bhyve-firmware state=present

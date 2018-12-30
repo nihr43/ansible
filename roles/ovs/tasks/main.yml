@@ -1,3 +1,0 @@
----
- - name: Install OpenvSwitch
-   pkgng: name=openvswitch state=present
