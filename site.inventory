@@ -5,7 +5,6 @@ nodes
 [hypervisors]
 
 [nodes]
-13eb-api
 1d21-api
 3159-api
 7dd0-api

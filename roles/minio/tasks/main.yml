@@ -17,4 +17,4 @@
    lineinfile:
     path: /etc/rc.conf
     regexp: '^minio_disks='
-    line: 'minio_disks="http://13eb-api:9000/opt/data http://1d21-api:9000/opt/data http://7dd0-api:9000/opt/data http://3159-api:9000/opt/data http://d2a1-api:9000/opt/data"'
+    line: 'minio_disks="http://1d21-api:9000/opt/data http://7dd0-api:9000/opt/data http://3159-api:9000/opt/data http://d2a1-api:9000/opt/data"'
