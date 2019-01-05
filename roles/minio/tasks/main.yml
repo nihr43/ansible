@@ -10,6 +10,14 @@
     group: minio
     mode: 0770
 
+ - name: configure keys
+   template: 
+    src: config.json
+    dest: /usr/local/etc/minio/config.json
+    owner: root
+    group: wheel
+    mode: 0644
+
  - name: enable minio
    service: name=minio enabled=yes
 
