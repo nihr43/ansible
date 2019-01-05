@@ -4,11 +4,11 @@
 
  - name: minio dir
    file:
-    path: /opt/data
+    path: /var/db/minio
     state: directory
     owner: minio
     group: minio
-    mode: 0660
+    mode: 0770
 
  - name: enable minio
    service: name=minio enabled=yes
@@ -17,4 +17,4 @@
    lineinfile:
     path: /etc/rc.conf
     regexp: '^minio_disks='
-    line: 'minio_disks="http://1d21-api:9000/opt/data http://7dd0-api:9000/opt/data http://3159-api:9000/opt/data http://d2a1-api:9000/opt/data"'
+    line: 'minio_disks="http://1d21-api:9000/var/db/minio http://7dd0-api:9000/var/db/minio http://3159-api:9000/var/db/minio http://d2a1-api:9000/var/db/minio"'
