@@ -17,6 +17,7 @@
     owner: root
     group: wheel
     mode: 0644
+   notify: restart minio
 
  - name: enable minio
    service: name=minio enabled=yes
