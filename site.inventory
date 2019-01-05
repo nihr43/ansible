@@ -1,8 +1,15 @@
 [freebsd_common:children]
 hypervisors
+nodes
 
 [hypervisors]
 
+[nodes]
+13eb-api
+1d21-api
+3159-api
+7dd0-api
+d2a1-api
 
 [freebsd_common:vars]
-ansible_python_interpreter=/usr/local/bin/python3
+ansible_python_interpreter=/usr/local/bin/python3.6

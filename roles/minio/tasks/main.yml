@@ -2,13 +2,19 @@
  - name: install minio
    pkgng: name=minio state=present
 
- - name: configure keys
-   template: 
-    src: config.json
-    dest: /usr/local/etc/minio/config.json
-    owner: root
-    group: wheel
-    mode: 0644
+ - name: minio dir
+   file:
+    path: /opt/data
+    state: directory
+    owner: minio
+    group: minio
+    mode: 0660
 
  - name: enable minio
-   service: name=minio enabled=no
+   service: name=minio enabled=yes
+
+ - name: configure minio cluster
+   lineinfile:
+    path: /etc/rc.conf
+    regexp: '^minio_disks='
+    line: 'minio_disks="http://13eb-api:9000/opt/data http://1d21-api:9000/opt/data http://7dd0-api:9000/opt/data http://3159-api:9000/opt/data http://d2a1-api:9000/opt/data"'
