@@ -7,7 +7,7 @@
     path: /opt/dm
     state: directory
     owner: root
-    group: root
+    group: wheel
     mode: 0770
 
  - git:
