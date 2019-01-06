@@ -13,3 +13,13 @@
  - git:
     repo: 'https://github.com/nihr43/dm-router.git'
     dest: /opt/dm/
+
+ - name: go get mux
+   command: go get github.com/gorilla/mux
+   args:
+    creates: /root/go/src/github.com/gorilla/mux
+
+ - name: go get etcd
+   command: go get go.etcd.io/etcd/clientv3
+   args:
+    creates: /root/go/src/go.etcd.io/etcd/clientv3
