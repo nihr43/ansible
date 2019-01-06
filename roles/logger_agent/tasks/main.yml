@@ -1,0 +1,21 @@
+---
+ - name: opt dir
+   file:
+    path: /opt/sbin
+    state: directory
+    owner: root
+    group: wheel
+    mode: 0770
+
+ - name: enforce logger agent
+   template: 
+    src: logger_agent.sh
+    dest: /opt/sbin/logger_agent.sh
+    owner: root
+    group: wheel
+    mode: 0770
+
+ - name: enforce logger cron job
+   lineinfile:
+    path: /etc/crontab
+    line: '30      *       *       *       *       root    /opt/sbin/logger_agent.sh'
