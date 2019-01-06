@@ -1,12 +1,12 @@
 ---
-- name: Add the user logger
-  user:
+ - name: Add the user logger
+   user:
     name: logger
     group: logger
     home: /usr/home/logger
 
-- name: copy authorized_keys
-  copy:
+ - name: copy authorized_keys
+   copy:
     src: authorized_keys
     dest: /usr/home/logger/.ssh/authorized_keys
     owner: logger
