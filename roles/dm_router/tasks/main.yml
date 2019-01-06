@@ -1,0 +1,15 @@
+---
+ - name: install pkgs
+   pkgng: name=go state=present
+
+ - name: dm dir
+   file:
+    path: /opt/dm
+    state: directory
+    owner: root
+    group: wheel
+    mode: 0770
+
+ - git:
+    repo: 'https://github.com/nihr43/dm-router.git'
+    dest: /opt/dm/
