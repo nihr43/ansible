@@ -13,3 +13,7 @@
  - hosts: 09f4-vmm, 2ab1-vmm, 2ed4-vmm, 4473-vmm, 5e09-vmm, f7e3-vmm
    roles:
     - dm_provider
+
+ - hosts: 50df-logger-node, 5328-logger-node, 6eb8-logger-node, c629-logger-node, e124-logger-node
+   roles:
+    - logger_node

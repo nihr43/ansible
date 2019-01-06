@@ -1,0 +1,30 @@
+---
+- name: Add the user logger
+  user:
+    name: logger
+    group: logger
+    home: /usr/home/logger
+
+- name: copy authorized_keys
+  copy:
+    src: authorized_keys
+    dest: /usr/home/logger/.ssh/authorized_keys
+    owner: logger
+    group: logger
+    mode: 0644
+
+ - name: opt dir
+   file:
+    path: /opt/
+    state: directory
+    owner: root
+    group: wheel
+    mode: 0644
+
+ - name: opt log dir
+   file:
+    path: /opt/log
+    state: directory
+    owner: logger
+    group: logger
+    mode: 0600
