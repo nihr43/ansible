@@ -7,7 +7,3 @@
    - name: freebsd-update install
      raw: env PAGER=cat freebsd-update install
      ignore_errors: true
-
-   - name: reboot
-     shell: shutdown -r +1sec
-     ignore_errors: true
