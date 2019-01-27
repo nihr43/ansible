@@ -3,23 +3,33 @@ hypervisors
 nodes
 
 [hypervisors]
-09f4-vmm
-2ab1-vmm
-2ed4-vmm
-4473-vmm
-5e09-vmm
-f7e3-vmm
+#09f4-vmm
+#2ab1-vmm
+#2ed4-vmm
+#4473-vmm
+#5e09-vmm
+#f7e3-vmm
 
 [nodes]
-1d21-api etcd_cluster='1d21-api=http://1d21-api:2380,3159-api=http://3159-api:2380,7dd0-api=http://7dd0-api:2380,d2a1-api=http://d2a1-api:2380'
-3159-api etcd_cluster='1d21-api=http://1d21-api:2380,3159-api=http://3159-api:2380,7dd0-api=http://7dd0-api:2380,d2a1-api=http://d2a1-api:2380'
-7dd0-api etcd_cluster='1d21-api=http://1d21-api:2380,3159-api=http://3159-api:2380,7dd0-api=http://7dd0-api:2380,d2a1-api=http://d2a1-api:2380'
-d2a1-api etcd_cluster='1d21-api=http://1d21-api:2380,3159-api=http://3159-api:2380,7dd0-api=http://7dd0-api:2380,d2a1-api=http://d2a1-api:2380'
-50df-logger-node
-5328-logger-node
-6eb8-logger-node
-c629-logger-node
-e124-logger-node
+#1d21-api etcd_cluster='1d21-api=http://1d21-api:2380,3159-api=http://3159-api:2380,7dd0-api=http://7dd0-api:2380,d2a1-api=http://d2a1-api:2380'
+#3159-api etcd_cluster='1d21-api=http://1d21-api:2380,3159-api=http://3159-api:2380,7dd0-api=http://7dd0-api:2380,d2a1-api=http://d2a1-api:2380'
+#7dd0-api etcd_cluster='1d21-api=http://1d21-api:2380,3159-api=http://3159-api:2380,7dd0-api=http://7dd0-api:2380,d2a1-api=http://d2a1-api:2380'
+#d2a1-api etcd_cluster='1d21-api=http://1d21-api:2380,3159-api=http://3159-api:2380,7dd0-api=http://7dd0-api:2380,d2a1-api=http://d2a1-api:2380'
+#50df-logger-node
+#5328-logger-node
+#6eb8-logger-node
+#c629-logger-node
+#e124-logger-node
+016a-grafana
+0ab0-influxdb
+4b01-elasticsearch
+7c7a-elasticsearch
+7ec8-elasticsearch
+28a4-haproxy-src
+e232-haproxy-src
+92e2-src
+957d-src
+e9a4-src
 
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python3.6
