@@ -22,6 +22,8 @@ nodes
 #e124-logger-node
 016a-grafana
 3170-influxdb
+16df-src-haproxy
+feee-src-haproxy
 6745-src
 ef94-src
 ff0b-src
