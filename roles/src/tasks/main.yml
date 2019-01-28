@@ -1,0 +1,10 @@
+---
+ - name: checkout src script
+   git:
+    repo: 'https://github.com/nihr43/mirror.git'
+    dest: /root/mirror
+
+ - name: configure crontab
+   lineinfile:
+    path: /etc/crontab
+    line: '0	0,12	*	*	*	root	/root/mirror/freebsd-src.sh'
