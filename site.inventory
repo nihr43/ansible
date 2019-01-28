@@ -21,7 +21,7 @@ nodes
 #c629-logger-node
 #e124-logger-node
 016a-grafana
-0ab0-influxdb
+3170-influxdb
 6745-src
 ef94-src
 ff0b-src
