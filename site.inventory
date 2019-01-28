@@ -25,6 +25,9 @@ nodes
 6745-src
 ef94-src
 ff0b-src
+0ace-elasticsearch
+4d28-elasticsearch
+6289-elasticsearch
 
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python3.6
