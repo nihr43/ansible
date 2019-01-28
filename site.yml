@@ -3,6 +3,10 @@
    roles:
     - freebsd_common
 
+ - hosts: 6745-src, ef94-src, ff0b-src
+   roles:
+    - src 
+
  - hosts: 1d21-api, 3159-api, 7dd0-api, d2a1-api
    roles:
     - dm_router

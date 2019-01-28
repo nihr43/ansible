@@ -22,14 +22,9 @@ nodes
 #e124-logger-node
 016a-grafana
 0ab0-influxdb
-4b01-elasticsearch
-7c7a-elasticsearch
-7ec8-elasticsearch
-28a4-haproxy-src
-e232-haproxy-src
-92e2-src
-957d-src
-e9a4-src
+6745-src
+ef94-src
+ff0b-src
 
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python3.6
