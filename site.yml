@@ -2,7 +2,6 @@
  - hosts: freebsd_common
    roles:
     - freebsd_common
-    - logger_agent
 
  - hosts: 1d21-api, 3159-api, 7dd0-api, d2a1-api
    roles:
