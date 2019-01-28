@@ -1,4 +1,7 @@
 ---
+ - name: install nginx
+   pkgng: name=nginx state=present 
+
  - name: checkout src script
    git:
     repo: 'https://github.com/nihr43/mirror.git'
