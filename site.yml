@@ -3,6 +3,10 @@
    roles:
     - freebsd_common
 
+ - hosts: 0ace-elasticsearch, 4d28-elasticsearch, 6289-elasticsearch
+   roles:
+    - elasticsearch
+
  - hosts: 6745-src, ef94-src, ff0b-src
    roles:
     - src 
