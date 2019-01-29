@@ -27,6 +27,8 @@ feee-src-haproxy
 6745-src
 ef94-src
 ff0b-src
+2b58-elasticsearch-haproxy
+43d9-elasticsearch-haproxy
 0ace-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
 4d28-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
 6289-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
