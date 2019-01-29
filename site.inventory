@@ -27,9 +27,9 @@ feee-src-haproxy
 6745-src
 ef94-src
 ff0b-src
-0ace-elasticsearch
-4d28-elasticsearch
-6289-elasticsearch
+0ace-elasticsearch elasticsearch_clusternodes='"0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch"'
+4d28-elasticsearch elasticsearch_clusternodes='"0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch"'
+6289-elasticsearch elasticsearch_clusternodes='"0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch"'
 
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python3.6

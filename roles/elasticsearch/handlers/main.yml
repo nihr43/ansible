@@ -1,4 +1,4 @@
 ---
- - name: restart minio
-   service: name=minio state=restarted
-   listen: "restart minio"
+ - name: restart elasticsearch
+   service: name=elasticsearch state=restarted
+   listen: "restart elasticsearch"
