@@ -3,6 +3,10 @@
    roles:
     - freebsd_common
 
+ - hosts: 16df-src-haproxy, feee-src-haproxy, 2b58-elasticsearch-haproxy, 43d9-elasticsearch-haproxy
+   roles:
+    - haproxy
+
  - hosts: 0ace-elasticsearch, 4d28-elasticsearch, 6289-elasticsearch
    roles:
     - elasticsearch
