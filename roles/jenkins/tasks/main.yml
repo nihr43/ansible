@@ -1,0 +1,3 @@
+---
+ - name: install jenkins
+   pkgng: name=jenkins state=present

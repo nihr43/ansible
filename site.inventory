@@ -37,6 +37,9 @@ ff0b-src
 e379-kibana
 e78e-kibana
 c1bb-kibana
+0341-jenkins
+46ea-jenkins
+9dd2-jenkins
 
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python3.6
