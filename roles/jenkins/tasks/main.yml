@@ -1,3 +1,6 @@
 ---
  - name: install jenkins
    pkgng: name=jenkins state=present
+
+ - name: enable jenkins
+   service: name=jenkins enabled=yes
