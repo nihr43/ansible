@@ -1,0 +1,8 @@
+---
+ - name: enforce vm dir
+   file:
+     path: /usr/bhyve
+     state: directory
+
+ - name: enforce vm-bhyve
+   pkgng: name=vm-bhyve,bhyve-firmware,grub2-bhyve state=present

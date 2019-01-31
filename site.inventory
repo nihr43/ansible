@@ -40,6 +40,7 @@ c1bb-kibana
 1728-jenkins-master
 ca72-jenkins-agent
 eee8-jenkins-agent
+e38f-vmm
 
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python3.6

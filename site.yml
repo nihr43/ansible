@@ -3,6 +3,10 @@
    roles:
     - freebsd_common
 
+ - hosts: e38f-vmm
+   roles:
+    - vm_bhyve
+
  - hosts: 1728-jenkins-master
    roles:
     - jenkins_master
