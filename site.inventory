@@ -22,8 +22,8 @@ nodes
 #e124-logger-node
 016a-grafana
 3170-influxdb
-16df-src-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.30' carp_role='primary'
-feee-src-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.30' carp_role='secondary'
+16df-src-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.31' carp_role='primary'
+feee-src-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.31' carp_role='secondary'
 6745-src
 ef94-src
 ff0b-src
