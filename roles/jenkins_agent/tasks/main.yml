@@ -7,7 +7,7 @@
    file:
      path: /usr/home/jenkins/.ssh
      state: directory
-     mode: 755
+     mode: 0755
      owner: jenkins
      group: jenkins
 
@@ -15,7 +15,7 @@
    copy:
      src: authorized_keys
      dest: /usr/home/jenkins/.ssh/authorized_keys
-     mode: 644
+     mode: 0644
      owner: jenkins
      group: jenkins
 
@@ -23,6 +23,6 @@
    file:
      path: /var/jenkins
      state: directory
-     mode: 755
+     mode: 0755
      owner: jenkins
      group: jenkins
