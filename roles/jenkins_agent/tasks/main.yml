@@ -15,7 +15,6 @@
    copy:
      src: authorized_keys
      dest: /usr/home/jenkins/.ssh/authorized_keys
-     state: file
      mode: 644
      owner: jenkins
      group: jenkins
