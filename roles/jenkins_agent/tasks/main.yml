@@ -2,3 +2,28 @@
  - name: create jenkins service account
    user:
      name: jenkins
+
+ - name: enforce jenkins .ssh dir
+   file:
+     path: /usr/home/jenkins/.ssh
+     state: directory
+     mode: 755
+     owner: jenkins
+     group: jenkins
+
+ - name: enforce jenkins authorizd_keys
+   file:
+     src: authorized_keys
+     path: /usr/home/jenkins/.ssh/authorized_keys
+     state: file
+     mode: 644
+     owner: jenkins
+     group: jenkins
+
+ - name: enforce jenkins work dir
+   file:
+     path: /var/jenkins
+     state: directory
+     mode: 755
+     owner: jenkins
+     group: jenkins
