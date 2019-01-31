@@ -1,0 +1,8 @@
+---
+ - hosts: '{{ target }}'
+   tasks:
+   - name: pkg clean
+     raw: env PAGER=cat pkg clean -ay
+
+   - name: pkg update
+     raw: env PAGER=cat pkg update -f
