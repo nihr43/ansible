@@ -1,3 +1,9 @@
 ---
  - name: install haproxy
    pkgng: name=haproxy state=present
+
+ - name: configure haproxy CARP address
+   lineinfile:
+    path: /etc/rc.conf
+    regexp: '^ifconfig_{{ carp_interface }}_alias0='
+    line: 'ifconfig_{{ carp_interface }}_alias0="inet vhid {{ carp_vhid }} pass testpass alias {{ carp_address }}/32"'

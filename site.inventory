@@ -22,7 +22,7 @@ nodes
 #e124-logger-node
 016a-grafana
 3170-influxdb
-16df-src-haproxy
+16df-src-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.30'
 feee-src-haproxy
 6745-src
 ef94-src
