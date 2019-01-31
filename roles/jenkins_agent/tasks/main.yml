@@ -14,7 +14,7 @@
  - name: enforce jenkins authorizd_keys
    copy:
      src: authorized_keys
-     path: /usr/home/jenkins/.ssh/authorized_keys
+     dest: /usr/home/jenkins/.ssh/authorized_keys
      state: file
      mode: 644
      owner: jenkins
