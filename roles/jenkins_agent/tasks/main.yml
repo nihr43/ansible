@@ -1,0 +1,4 @@
+---
+ - name: create jenkins service account
+   user:
+     name: jenkins
