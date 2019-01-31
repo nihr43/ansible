@@ -6,3 +6,15 @@
 
  - name: enforce vm-bhyve
    pkgng: name=vm-bhyve,bhyve-firmware,grub2-bhyve state=present
+
+ - name: enable vm-bhyve
+   lineinfile:
+    path: /etc/rc.conf
+    regexp: '^vm_enable='
+    line: 'vm_enable="YES"'
+
+ - name: configure vm-bhyve
+   lineinfile:
+    path: /etc/rc.conf
+    regexp: '^vm_dir='
+    line: 'vm_dir="/usr/bhyve"'
