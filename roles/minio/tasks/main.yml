@@ -35,3 +35,5 @@
     path: /etc/rc.conf
     regexp: '^minio_disks='
     line: 'minio_disks="{{ minio_disks }}"'
+   notify: restart minio
+
