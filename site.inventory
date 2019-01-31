@@ -22,13 +22,13 @@ nodes
 #e124-logger-node
 016a-grafana
 3170-influxdb
-16df-src-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.31' carp_role='primary'
-feee-src-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.31' carp_role='secondary'
+16df-src-haproxy carp_interface='vnet0' carp_vhid='0' carp_address='10.0.0.30' carp_role='primary'
+feee-src-haproxy carp_interface='vnet0' carp_vhid='0' carp_address='10.0.0.30' carp_role='secondary'
 6745-src
 ef94-src
 ff0b-src
-2b58-elasticsearch-haproxy
-43d9-elasticsearch-haproxy
+2b58-elasticsearch-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.31' carp_role='primary'
+43d9-elasticsearch-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.31' carp_role='secondary'
 0ace-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
 4d28-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
 6289-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
