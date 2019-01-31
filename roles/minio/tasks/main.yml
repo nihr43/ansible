@@ -1,6 +1,6 @@
 ---
  - name: install minio
-   pkgng: name=minio state=present
+   pkgng: name=minio,minio-client state=present
 
  - name: minio dir
    file:
