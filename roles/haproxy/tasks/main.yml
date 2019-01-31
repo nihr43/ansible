@@ -8,6 +8,7 @@
     regexp: '^ifconfig_{{ carp_interface }}_alias0='
     line: 'ifconfig_{{ carp_interface }}_alias0="inet vhid {{ carp_vhid }} pass testpass alias {{ carp_address }}/32"'
    when: carp_role == "primary"
+   notify: restart network
 
  - name: configure haproxy secondary CARP address
    lineinfile:
@@ -15,3 +16,4 @@
     regexp: '^ifconfig_{{ carp_interface }}_alias0='
     line: 'ifconfig_{{ carp_interface }}_alias0="inet vhid {{ carp_vhid }} advskew 100 pass testpass alias {{ carp_address }}/32"'
    when: carp_role == "secondary"
+   notify: restart network

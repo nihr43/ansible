@@ -1,4 +1,4 @@
 ---
- - name: restart elasticsearch
-   service: name=elasticsearch state=restarted
-   listen: "restart elasticsearch"
+ - name: restart netif
+   service: name=netif state=restarted
+   listen: "restart network"
