@@ -22,8 +22,8 @@
    template: 
     src: config.json
     dest: /usr/local/etc/minio/config.json
-    owner: root
-    group: wheel
+    owner: minio
+    group: minio
     mode: 0644
    notify: restart minio
 
