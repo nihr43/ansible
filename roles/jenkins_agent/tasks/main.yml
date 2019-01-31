@@ -11,7 +11,7 @@
      owner: jenkins
      group: jenkins
 
- - name: enforce jenkins authorizd_keys
+ - name: enforce jenkins authorized_keys
    copy:
      src: authorized_keys
      dest: /usr/home/jenkins/.ssh/authorized_keys
