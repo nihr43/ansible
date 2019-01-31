@@ -3,7 +3,7 @@
    roles:
     - freebsd_common
 
- - hosts: 0341-jenkins, 46ea-jenkins, 9dd2-jenkins
+ - hosts: 1728-jenkins-master, 06a9-jenkins-agent, 2be7-jenkins-agent
    roles:
     - jenkins
 
