@@ -3,6 +3,10 @@
    roles:
     - freebsd_common
 
+ - hosts: 2e52-minio, 5868-minio, 98fb-minio, a6d3-minio
+   roles:
+    - minio
+
  - hosts: e38f-vmm
    roles:
     - vm_bhyve
