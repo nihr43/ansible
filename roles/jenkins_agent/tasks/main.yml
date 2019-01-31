@@ -26,3 +26,6 @@
      mode: 0755
      owner: jenkins
      group: jenkins
+
+ - name: enforce java
+   pkgng: name=openjdk8-jre state=present
