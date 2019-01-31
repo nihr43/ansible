@@ -12,7 +12,7 @@
      group: jenkins
 
  - name: enforce jenkins authorizd_keys
-   file:
+   copy:
      src: authorized_keys
      path: /usr/home/jenkins/.ssh/authorized_keys
      state: file
