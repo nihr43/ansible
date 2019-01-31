@@ -10,6 +10,14 @@
     group: minio
     mode: 0770
 
+ - name: minio config dir
+   file:
+    path: /usr/local/etc/minio
+    state: directory
+    owner: root
+    group: wheel
+    mode: 0644
+
  - name: configure keys
    template: 
     src: config.json
