@@ -41,6 +41,12 @@ c1bb-kibana
 ca72-jenkins-agent
 eee8-jenkins-agent
 e38f-vmm
+d9ed-minio-haproxy
+4588-minio-haproxy
+2e52-minio
+5868-minio
+98fb-minio
+a6d3-minio
 
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python3.6
