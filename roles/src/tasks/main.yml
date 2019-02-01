@@ -2,6 +2,9 @@
  - name: install nginx
    pkgng: name=nginx state=present 
 
+ - name: Enable nginx
+   service: name=nginx enabled=yes
+
  - name: Configuring NGINX
    template:
     src: nginx.conf
@@ -9,6 +12,7 @@
     owner: root
     group: wheel
     mode: '0644'
+   notify: restart nginx
 
  - name: checkout src script
    git:
