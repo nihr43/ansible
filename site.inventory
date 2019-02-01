@@ -43,8 +43,8 @@ eee8-jenkins-agent
 1d0b-jenkins-agent
 ff1c-jenkins-agent
 e38f-vmm
-d9ed-minio-haproxy
-4588-minio-haproxy
+d9ed-minio-haproxy carp_interface='vnet0' carp_vhid='3' carp_address='10.0.0.32' carp_role='primary'
+4588-minio-haproxy carp_interface='vnet0' carp_vhid='3' carp_address='10.0.0.32' carp_role='secondary'
 2e52-minio minio_disks='http://98fb-minio:9000/var/db/minio http://5868-minio:9000/var/db/minio http://2e52-minio:9000/var/db/minio http://a6d3-minio:9000/var/db/minio'
 5868-minio minio_disks='http://98fb-minio:9000/var/db/minio http://5868-minio:9000/var/db/minio http://2e52-minio:9000/var/db/minio http://a6d3-minio:9000/var/db/minio'
 98fb-minio minio_disks='http://98fb-minio:9000/var/db/minio http://5868-minio:9000/var/db/minio http://2e52-minio:9000/var/db/minio http://a6d3-minio:9000/var/db/minio'
