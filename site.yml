@@ -15,7 +15,7 @@
    roles:
     - jenkins_master
 
- - hosts: eee8-jenkins-agent, ca72-jenkins-agent
+ - hosts: eee8-jenkins-agent, ca72-jenkins-agent, 1d0b-jenkins-agent, ff1c-jenkins-agent
    roles:
     - jenkins_agent
 
