@@ -2,6 +2,10 @@
  - name: install haproxy
    pkgng: name=haproxy state=present
 
+ - name: create haproxy account
+   user:
+     name: haproxy
+
  - name: configure haproxy primary CARP address
    lineinfile:
     path: /etc/rc.conf
