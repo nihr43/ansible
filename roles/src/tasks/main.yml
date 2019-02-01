@@ -2,6 +2,14 @@
  - name: install nginx
    pkgng: name=nginx state=present 
 
+ - name: Configuring NGINX
+   template:
+    src: nginx.conf
+    dest: /usr/local/etc/nginx/nginx.conf
+    owner: root
+    group: wheel
+    mode: '0644'
+
  - name: checkout src script
    git:
     repo: 'https://github.com/nihr43/mirror.git'
