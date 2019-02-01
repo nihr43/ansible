@@ -32,8 +32,8 @@ ff0b-src
 0ace-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
 4d28-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
 6289-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
-3643-kibana-haproxy
-324e-kibana-haproxy
+#3643-kibana-haproxy
+#324e-kibana-haproxy
 e379-kibana
 e78e-kibana
 c1bb-kibana
