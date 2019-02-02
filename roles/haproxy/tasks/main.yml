@@ -6,6 +6,9 @@
    user:
      name: haproxy
 
+  - name: enable haproxy
+    service: name=haproxy enabled=yes
+
  - name: configure haproxy
    template: src=haproxy.conf dest=/usr/local/etc/haproxy.conf
    notify: restart haproxy
