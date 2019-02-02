@@ -18,15 +18,6 @@
     group: wheel
     mode: 0644
 
- - name: configure keys
-   template: 
-    src: config.json
-    dest: /usr/local/etc/minio/config.json
-    owner: minio
-    group: minio
-    mode: 0644
-   notify: restart minio
-
  - name: enable minio
    service: name=minio enabled=yes
 

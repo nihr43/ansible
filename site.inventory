@@ -47,10 +47,10 @@ ff1c-jenkins-agent
 e38f-vmm
 
 [minio_nodes]
-2e52-minio minio_disks='http://98fb-minio:9000/var/db/minio http://5868-minio:9000/var/db/minio http://2e52-minio:9000/var/db/minio http://a6d3-minio:9000/var/db/minio' minio_keys='MINIO_ACCESS_KEY=47I663UBCO9O73OM93DO MINIO_SECRET_KEY=Re5mrIBiV6tOQhE7yjgMW0AXPxY89LNrgOpW7dfv'
-5868-minio minio_disks='http://98fb-minio:9000/var/db/minio http://5868-minio:9000/var/db/minio http://2e52-minio:9000/var/db/minio http://a6d3-minio:9000/var/db/minio' minio_keys='MINIO_ACCESS_KEY=47I663UBCO9O73OM93DO MINIO_SECRET_KEY=Re5mrIBiV6tOQhE7yjgMW0AXPxY89LNrgOpW7dfv'
-98fb-minio minio_disks='http://98fb-minio:9000/var/db/minio http://5868-minio:9000/var/db/minio http://2e52-minio:9000/var/db/minio http://a6d3-minio:9000/var/db/minio' minio_keys='MINIO_ACCESS_KEY=47I663UBCO9O73OM93DO MINIO_SECRET_KEY=Re5mrIBiV6tOQhE7yjgMW0AXPxY89LNrgOpW7dfv'
-a6d3-minio minio_disks='http://98fb-minio:9000/var/db/minio http://5868-minio:9000/var/db/minio http://2e52-minio:9000/var/db/minio http://a6d3-minio:9000/var/db/minio' minio_keys='MINIO_ACCESS_KEY=47I663UBCO9O73OM93DO MINIO_SECRET_KEY=Re5mrIBiV6tOQhE7yjgMW0AXPxY89LNrgOpW7dfv'
+790d-minio
+fcd9-minio
+1efc-minio
+ff7e-minio
 
 [haproxy_minio]
 d9ed-minio-haproxy carp_interface='vnet0' carp_vhid='3' carp_address='10.0.0.32' carp_role='primary' http_port='9000'
