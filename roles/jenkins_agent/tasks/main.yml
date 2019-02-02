@@ -1,4 +1,7 @@
 ---
+ - name: install sudo
+   pkgng: name=sudo state=present
+
  - name: create jenkins service account
    user:
      name: jenkins
