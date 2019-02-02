@@ -29,7 +29,7 @@
     line: "{{ item.line }}"
    with_items:
      - { regexp: '^minio_disks=', line: 'minio_disks="{% for node in groups.minio_nodes %}http://{{ node }}:9000/var/db/minio{% if not loop.last %} {% endif %}{% endfor %}"' }
-     - { regexp: '^minio_env=', line: 'minio_env="{{ minio_keys }} MINIO_STORAGE_CLASS_STANDARD=EC:1"' }
+     - { regexp: '^minio_env=', line: 'minio_env="{{ minio_keys }} MINIO_STORAGE_CLASS_STANDARD=EC:1 MINIO_STORAGE_CLASS_RRS=EC:0"' }
    notify: restart minio
 
  - name: ensure minio is running
