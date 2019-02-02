@@ -55,6 +55,7 @@ a2af-minio
 [haproxy_minio]
 d9ed-minio-haproxy carp_interface='vnet0' carp_vhid='3' carp_address='10.0.0.32' carp_role='primary' http_port='9000'
 4588-minio-haproxy carp_interface='vnet0' carp_vhid='3' carp_address='10.0.0.32' carp_role='secondary' http_port='9000'
+05ea-minio-haproxy carp_interface='vnet0' carp_vhid='3' carp_address='10.0.0.32' carp_role='secondary' http_port='9000'
 
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python3.6
