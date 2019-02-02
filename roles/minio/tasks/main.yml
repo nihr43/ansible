@@ -16,7 +16,8 @@
     state: directory
     owner: minio
     group: minio
-    mode: 0644
+    mode: 0770
+   notify: restart minio
 
  - name: enable minio
    service: name=minio enabled=yes
