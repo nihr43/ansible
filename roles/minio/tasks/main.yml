@@ -8,14 +8,14 @@
     state: directory
     owner: minio
     group: minio
-    mode: 0770
+    mode: 0660
 
  - name: minio config dir
    file:
     path: /usr/local/etc/minio
     state: directory
-    owner: root
-    group: wheel
+    owner: minio
+    group: minio
     mode: 0644
 
  - name: enable minio
