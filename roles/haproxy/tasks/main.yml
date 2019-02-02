@@ -6,6 +6,10 @@
    user:
      name: haproxy
 
+ - name: configure haproxy
+   template: src=haproxy.conf dest=/usr/local/etc/haproxy.conf
+   notify: restart haproxy
+
  - name: configure haproxy primary CARP address
    lineinfile:
     path: /etc/rc.conf

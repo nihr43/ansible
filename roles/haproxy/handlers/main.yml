@@ -2,3 +2,8 @@
  - name: restart netif
    service: name=netif state=restarted
    listen: "restart network"
+
+ - name: restart haproxy
+   service: name=haproxy state=restarted
+   listen: "restart haproxy"
+
