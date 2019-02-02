@@ -47,10 +47,10 @@ ff1c-jenkins-agent
 e38f-vmm
 
 [minio_nodes]
-790d-minio
-fcd9-minio
-1efc-minio
-ff7e-minio
+3bf7-minio
+d927-minio
+e421-minio
+b4c3-minio
 
 [haproxy_minio]
 d9ed-minio-haproxy carp_interface='vnet0' carp_vhid='3' carp_address='10.0.0.32' carp_role='primary' http_port='9000'
