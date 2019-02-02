@@ -8,7 +8,7 @@
     state: directory
     owner: minio
     group: minio
-    mode: 0660
+    mode: 0770
 
  - name: minio config dir
    file:
