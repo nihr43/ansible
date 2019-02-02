@@ -30,3 +30,6 @@
      - { regexp: '^minio_disks=', line: 'minio_disks="{{ minio_disks }}"' }
      - { regexp: '^minio_env=', line: 'minio_env="{{ minio_keys }}"' }
    notify: restart minio
+
+ - name: ensure minio is running
+   service: name=minio started=yes
