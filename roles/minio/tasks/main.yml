@@ -33,7 +33,9 @@
  - name: configure minio cluster
    lineinfile:
     path: /etc/rc.conf
-    regexp: '^minio_disks='
-    line: 'minio_disks="{{ minio_disks }}"'
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+   with_items:
+     - { regexp: '^minio_disks=', line: 'minio_disks="{{ minio_disks }}"' }
+     - { regexp: '^minio_env=', line: 'minio_env="{{ minio_keys }}"' }
    notify: restart minio
-
