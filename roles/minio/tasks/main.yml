@@ -32,4 +32,4 @@
    notify: restart minio
 
  - name: ensure minio is running
-   service: name=minio started=yes
+   service: name=minio state=started
