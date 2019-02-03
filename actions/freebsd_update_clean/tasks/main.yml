@@ -2,4 +2,6 @@
  - hosts: '{{ target }}'
    tasks:
    - name: freebsd-update clean
-     raw: find /var/db/freebsd-update/files/ -type f -delete
+     raw: find /var/db/freebsd-update/files/ -type f -print -delete
+     register: find
+     changed_when: "'/var/db/freebsd-update/' in find.stdout"
