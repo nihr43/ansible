@@ -8,5 +8,5 @@
 
    - name: freebsd-update install
      raw: env PAGER=cat freebsd-update install
-     when: "'Preparing to download files' in fetch_result.stdout"
+     when: "'Fetching' in fetch_result.stdout"
      ignore_errors: true
