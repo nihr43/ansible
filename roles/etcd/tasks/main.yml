@@ -15,7 +15,7 @@
    register: pgrep_result
    ignore_errors: True
 
-   # - name: ensure etcd is running
-   #   raw: daemon /root/start_etcd.sh
-   #   when: pgrep_result.stdout == ""
+ - name: ensure etcd is running
+   raw: daemon /root/start_etcd.sh
+   when: pgrep_result.stdout == ""
    
