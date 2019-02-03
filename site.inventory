@@ -3,6 +3,7 @@ hypervisors
 nodes
 haproxy_minio
 minio_nodes
+elasticsearch_nodes
 
 [hypervisors]
 #09f4-vmm
@@ -29,12 +30,9 @@ feee-src-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.30' c
 6745-src
 ef94-src
 ff0b-src
-2b58-elasticsearch-haproxy carp_interface='vnet0' carp_vhid='2' carp_address='10.0.0.31' carp_role='primary' http_port='9200'
-43d9-elasticsearch-haproxy carp_interface='vnet0' carp_vhid='2' carp_address='10.0.0.31' carp_role='secondary' http_port='9200'
-9563-elasticsearch-haproxy carp_interface='vnet0' carp_vhid='2' carp_address='10.0.0.31' carp_role='tertiary' http_port='9200'
-0ace-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
-4d28-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
-6289-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
+2b58-elasticsearch-haproxy carp_interface='vnet0' carp_vhid='2' carp_address='10.0.0.31' carp_role='primary' http_port='9200' proxied_group='elasticsearch_nodes'
+43d9-elasticsearch-haproxy carp_interface='vnet0' carp_vhid='2' carp_address='10.0.0.31' carp_role='secondary' http_port='9200' proxied_group='elasticsearch_nodes'
+9563-elasticsearch-haproxy carp_interface='vnet0' carp_vhid='2' carp_address='10.0.0.31' carp_role='tertiary' http_port='9200' proxied_group='elasticsearch_nodes'
 #3643-kibana-haproxy
 #324e-kibana-haproxy
 e379-kibana
@@ -46,6 +44,11 @@ eee8-jenkins-agent
 1d0b-jenkins-agent
 ff1c-jenkins-agent
 e38f-vmm
+
+[elasticsearc_nodes]
+0ace-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
+4d28-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
+6289-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
 
 [minio_nodes]
 d0a4-minio
