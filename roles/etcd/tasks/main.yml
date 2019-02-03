@@ -14,7 +14,7 @@
    raw: pgrep etcd
    register: pgrep_result
 
- - name: ensure etcd is running
-   raw: daemon /root/start_etcd.sh
-   when: pgrep_result.stdout == ""
+   # - name: ensure etcd is running
+   #   raw: daemon /root/start_etcd.sh
+   #   when: pgrep_result.stdout == ""
    
