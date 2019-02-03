@@ -4,7 +4,7 @@
    - name: freebsd-update fetch
      raw: env PAGER=cat freebsd-update fetch --currently-running 12.0-RELEASE
      register: fetch_result
-     changed_when: "'Preparing to download files' in fetch_result.stdout"
+     changed_when: "'Fetching' in fetch_result.stdout"
 
    - name: freebsd-update install
      raw: env PAGER=cat freebsd-update install
