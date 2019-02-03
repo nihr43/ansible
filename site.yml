@@ -3,6 +3,10 @@
    roles:
     - freebsd_common
 
+ - hosts: etcd_nodes
+   roles:
+    - etcd
+
  - hosts: minio_nodes
    roles:
     - minio
