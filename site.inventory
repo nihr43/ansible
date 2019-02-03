@@ -5,6 +5,8 @@ haproxy_minio
 minio_nodes
 elasticsearch_nodes
 src_nodes
+haproxy_etcd
+etcd_nodes
 
 [hypervisors]
 #09f4-vmm
@@ -42,6 +44,15 @@ eee8-jenkins-agent
 1d0b-jenkins-agent
 ff1c-jenkins-agent
 e38f-vmm
+
+[haproxy_etcd]
+971f-etcd-haproxy carp_interface='vnet0' carp_vhid='4' carp_address='10.0.0.34' carp_role='primary' http_port='80' proxied_group='etcd_nodes'
+544d-etcd-haproxy carp_interface='vnet0' carp_vhid='4' carp_address='10.0.0.34' carp_role='secondary' http_port='80' proxied_group='etcd_nodes'
+
+[etcd_nodes]
+c0d8-etcd
+52f4-etcd
+6439-etcd
 
 [src_nodes]
 ef94-src
