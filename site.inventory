@@ -46,8 +46,8 @@ ff1c-jenkins-agent
 e38f-vmm
 
 [haproxy_etcd]
-971f-etcd-haproxy carp_interface='vnet0' carp_vhid='4' carp_address='10.0.0.34' carp_role='primary' http_port='80' proxied_group='etcd_nodes'
-544d-etcd-haproxy carp_interface='vnet0' carp_vhid='4' carp_address='10.0.0.34' carp_role='secondary' http_port='80' proxied_group='etcd_nodes'
+971f-etcd-haproxy carp_interface='vnet0' carp_vhid='4' carp_address='10.0.0.34' carp_role='primary' http_port='2380' proxied_group='etcd_nodes'
+544d-etcd-haproxy carp_interface='vnet0' carp_vhid='4' carp_address='10.0.0.34' carp_role='secondary' http_port='2380' proxied_group='etcd_nodes'
 
 [etcd_nodes]
 c0d8-etcd
