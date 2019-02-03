@@ -45,7 +45,7 @@ eee8-jenkins-agent
 ff1c-jenkins-agent
 e38f-vmm
 
-[elasticsearc_nodes]
+[elasticsearch_nodes]
 0ace-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
 4d28-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
 6289-elasticsearch elasticsearch_clusternodes=' "0ace-elasticsearch", "4d28-elasticsearch", "6289-elasticsearch" '
