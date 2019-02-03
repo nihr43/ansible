@@ -1,9 +1,0 @@
----
- - hosts: '{{ target }}'
-   tasks:
-   - name: freebsd-update fetch
-     raw: env PAGER=cat freebsd-update fetch --currently-running 12.0-RELEASE
-
-   - name: freebsd-update install
-     raw: env PAGER=cat freebsd-update install
-     ignore_errors: true
