@@ -19,7 +19,7 @@
    roles:
     - jenkins_agent
 
- - hosts: 16df-src-haproxy, feee-src-haproxy, 2b58-elasticsearch-haproxy, 43d9-elasticsearch-haproxy, 3643-kibana-haproxy, 324e-kibana-haproxy, d9ed-minio-haproxy, 4588-minio-haproxy
+ - hosts: 16df-src-haproxy, feee-src-haproxy, 2b58-elasticsearch-haproxy, 43d9-elasticsearch-haproxy, 3643-kibana-haproxy, 324e-kibana-haproxy, d9ed-minio-haproxy, 4588-minio-haproxy, 05ea-minio-haproxy
    roles:
     - haproxy
 
