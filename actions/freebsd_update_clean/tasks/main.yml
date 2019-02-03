@@ -1,0 +1,5 @@
+---
+ - hosts: '{{ target }}'
+   tasks:
+   - name: freebsd-update clean
+     raw: find /var/db/freebsd-update/files/ -type f -delete
