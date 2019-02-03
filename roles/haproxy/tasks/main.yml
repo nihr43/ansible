@@ -25,8 +25,16 @@
    lineinfile:
     path: /etc/rc.conf
     regexp: '^ifconfig_{{ carp_interface }}_alias0='
-    line: 'ifconfig_{{ carp_interface }}_alias0="inet vhid {{ carp_vhid }} advskew 100 pass testpass alias {{ carp_address }}/32"'
+    line: 'ifconfig_{{ carp_interface }}_alias0="inet vhid {{ carp_vhid }} advskew 50 pass testpass alias {{ carp_address }}/32"'
    when: carp_role == "secondary"
+   notify: restart network
+
+ - name: configure haproxy tertiary CARP address
+   lineinfile:
+    path: /etc/rc.conf
+    regexp: '^ifconfig_{{ carp_interface }}_alias0='
+    line: 'ifconfig_{{ carp_interface }}_alias0="inet vhid {{ carp_vhid }} advskew 100 pass testpass alias {{ carp_address }}/32"'
+   when: carp_role == "tertiary"
    notify: restart network
 
  - name: ensure haproxy is running
