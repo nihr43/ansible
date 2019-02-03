@@ -28,3 +28,6 @@
     line: 'ifconfig_{{ carp_interface }}_alias0="inet vhid {{ carp_vhid }} advskew 100 pass testpass alias {{ carp_address }}/32"'
    when: carp_role == "secondary"
    notify: restart network
+
+ - name: ensure haproxy is running
+   service: name=haproxy state=started
