@@ -2,6 +2,9 @@
  - name: install sudo
    pkgng: name=sudo state=present
 
+ - name: install minio-client
+   pkgng: name=minio-client state=present
+
  - name: create jenkins service account
    user:
      name: jenkins
