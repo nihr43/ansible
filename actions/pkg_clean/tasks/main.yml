@@ -1,8 +1,13 @@
 ---
  - hosts: '{{ target }}'
    tasks:
-   - name: pkg clean
+   - name: clean pkg cache
      raw: env PAGER=cat pkg clean -ay
 
-   - name: pkg update
-     raw: env PAGER=cat pkg update -f
+   - name: update pkg meta
+     raw: env PAGER=cat pkg update
+
+   - name: remove unused pkgs
+     raw: env PAGER=cat pkg autoremove -y
+     register: autoremove
+     changed_when: "'Deinstallation has been requested' in autoremove.stdout"
