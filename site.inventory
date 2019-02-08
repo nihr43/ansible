@@ -7,6 +7,7 @@ elasticsearch_nodes
 src_nodes
 haproxy_etcd
 etcd_nodes
+dm_compute
 
 [hypervisors]
 #09f4-vmm
@@ -73,6 +74,11 @@ a2af-minio
 d9ed-minio-haproxy carp_interface='vnet0' carp_vhid='3' carp_address='10.0.0.33' carp_role='primary' http_port='9000' proxied_group='minio_nodes'
 4588-minio-haproxy carp_interface='vnet0' carp_vhid='3' carp_address='10.0.0.33' carp_role='secondary' http_port='9000' proxied_group='minio_nodes'
 05ea-minio-haproxy carp_interface='vnet0' carp_vhid='3' carp_address='10.0.0.33' carp_role='tertiary' http_port='9000' proxied_group='minio_nodes'
+
+[dm_compute]
+27d3-dm-compute
+dd26-dm-compute
+e16a-dm-compute
 
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python3.6
