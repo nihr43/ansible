@@ -36,15 +36,13 @@ feee-src-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.31' c
 9563-elasticsearch-haproxy carp_interface='vnet0' carp_vhid='2' carp_address='10.0.0.32' carp_role='tertiary' http_port='9200' proxied_group='elasticsearch_nodes'
 #3643-kibana-haproxy
 #324e-kibana-haproxy
-e379-kibana
-e78e-kibana
-c1bb-kibana
 1728-jenkins-master
 ca72-jenkins-agent
 eee8-jenkins-agent
 1d0b-jenkins-agent
 ff1c-jenkins-agent
 e38f-vmm
+59eb-mysql
 
 [haproxy_etcd]
 971f-etcd-haproxy carp_interface='vnet0' carp_vhid='4' carp_address='10.0.0.34' carp_role='primary' http_port='2379' proxied_group='etcd_nodes'
