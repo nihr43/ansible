@@ -86,3 +86,6 @@ e16a-dm-compute
 [freebsd_common:vars]
 ansible_python_interpreter=/usr/local/bin/python3.6
 logger_nodes='50df-logger-node 5328-logger-node 6eb8-logger-node c629-logger-node e124-logger-node'
+
+[alpine_common:vars]
+ansible_python_interpreter=/usr/bin/python3
