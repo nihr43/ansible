@@ -13,8 +13,7 @@ dm_compute
 alpine_nodes
 
 [alpine_nodes]
-02c6-jenkins-agent-alpine
-975b-jenkins-agent-alpine
+90d4-jenkins-agent-alpine
 
 [hypervisors]
 #09f4-vmm
