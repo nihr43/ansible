@@ -8,12 +8,12 @@
 
  - name: configure jenkins sudo
    lineinfile:
-    path: /usr/local/etc/sudoers
+    path: /etc/sudoers
     line: 'jenkins ALL=(ALL) NOPASSWD: ALL'
 
  - name: enforce jenkins .ssh dir
    file:
-     path: /usr/home/jenkins/.ssh
+     path: /home/jenkins/.ssh
      state: directory
      mode: 0755
      owner: jenkins
@@ -22,7 +22,7 @@
  - name: enforce jenkins authorized_keys
    copy:
      src: authorized_keys
-     dest: /usr/home/jenkins/.ssh/authorized_keys
+     dest: /home/jenkins/.ssh/authorized_keys
      mode: 0644
      owner: jenkins
      group: jenkins
