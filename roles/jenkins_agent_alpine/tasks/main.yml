@@ -1,0 +1,39 @@
+---
+ - name: install sudo
+   apk: name=sudo state=present
+
+ - name: create jenkins service account
+   user:
+     name: jenkins
+
+ - name: configure jenkins sudo
+   lineinfile:
+    path: /usr/local/etc/sudoers
+    line: 'jenkins ALL=(ALL) NOPASSWD: ALL'
+
+ - name: enforce jenkins .ssh dir
+   file:
+     path: /usr/home/jenkins/.ssh
+     state: directory
+     mode: 0755
+     owner: jenkins
+     group: jenkins
+
+ - name: enforce jenkins authorized_keys
+   copy:
+     src: authorized_keys
+     dest: /usr/home/jenkins/.ssh/authorized_keys
+     mode: 0644
+     owner: jenkins
+     group: jenkins
+
+ - name: enforce jenkins work dir
+   file:
+     path: /var/jenkins
+     state: directory
+     mode: 0755
+     owner: jenkins
+     group: jenkins
+
+ - name: enforce java
+   apk: name=openjdk8-jre state=present
