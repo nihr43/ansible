@@ -3,6 +3,10 @@
    roles:
     - freebsd_common
 
+ - hosts: alpine_common
+   roles:
+    - alpine_common
+
  - hosts: etcd_nodes
    roles:
     - etcd

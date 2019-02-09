@@ -9,6 +9,13 @@ haproxy_etcd
 etcd_nodes
 dm_compute
 
+[alpine_common:children]
+alpine_nodes
+
+[alpine_nodes]
+02c6-jenkins-agent-alpine
+975b-jenkins-agent-alpine
+
 [hypervisors]
 #09f4-vmm
 #2ab1-vmm
