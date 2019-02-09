@@ -28,7 +28,6 @@ dm_compute
 #c629-logger-node
 #e124-logger-node
 016a-grafana
-3170-influxdb
 16df-src-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.31' carp_role='primary' http_port='80' proxied_group='src_nodes'
 feee-src-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.31' carp_role='secondary' http_port='80' proxied_group='src_nodes'
 2b58-elasticsearch-haproxy carp_interface='vnet0' carp_vhid='2' carp_address='10.0.0.32' carp_role='primary' http_port='9200' proxied_group='elasticsearch_nodes'
