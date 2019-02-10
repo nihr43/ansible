@@ -8,6 +8,7 @@ src_nodes
 haproxy_etcd
 etcd_nodes
 dm_compute
+managed_hypervisor
 
 [alpine_common:children]
 alpine_nodes
@@ -48,6 +49,8 @@ eee8-jenkins-agent
 ff1c-jenkins-agent
 e38f-vmm
 59eb-mysql
+
+[managed_hypervisor]
 27d3-dm-compute
 
 [haproxy_etcd]
