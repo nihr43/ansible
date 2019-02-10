@@ -1,4 +1,4 @@
 ---
  - name: start jails in group var
    raw: "cd /root/jm/ ; ./jm create 12_1-RELEASE.tar {{ item }}"
-   with_items: {{ jails }}
+   with_items: "{{ jails }}"
