@@ -48,6 +48,7 @@ eee8-jenkins-agent
 ff1c-jenkins-agent
 e38f-vmm
 59eb-mysql
+27d3-dm-compute
 
 [haproxy_etcd]
 971f-etcd-haproxy carp_interface='vnet0' carp_vhid='4' carp_address='10.0.0.34' carp_role='primary' http_port='2379' proxied_group='etcd_nodes'

@@ -3,6 +3,10 @@
    roles:
     - freebsd_common
 
+ - hosts: 27d3-dm-compute
+   roles:
+    - managed_hyprevisors
+
  - hosts: alpine_common
    roles:
     - alpine_common
