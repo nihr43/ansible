@@ -1,1 +1,1 @@
-jails: [a, b, c, d]
+jails: ["a", "b", "c", "d"]

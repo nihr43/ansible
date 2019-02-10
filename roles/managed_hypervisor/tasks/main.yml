@@ -1,5 +1,5 @@
 ---
  - name: start jails in group var
-   shell: "sh /root/jm/jm create 12_1-RELEASE.tar {{ item }}"
+   shell: "/root/jm/jm create 12_1-RELEASE.tar {{ item }}"
    with_items: "{{ jails }}"
    ignore_errors: yes
