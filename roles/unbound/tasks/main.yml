@@ -27,7 +27,7 @@
    file:
     path: /usr/local/etc/unbound/records.conf
     state: touch
-    when: stat_result.stat.exists == False
+   when: stat_result.stat.exists == False
 
  - name: land update job
    template:
