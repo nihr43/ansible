@@ -9,6 +9,7 @@ haproxy_etcd
 etcd_nodes
 dm_compute
 managed_hypervisor
+unbound
 
 [alpine_common:children]
 alpine_nodes
@@ -48,6 +49,11 @@ eee8-jenkins-agent
 ff1c-jenkins-agent
 e38f-vmm
 59eb-mysql
+
+[unbound]
+10.0.0.10
+10.0.0.11
+10.0.0.12
 
 [managed_hypervisor]
 #27d3-dm-compute
