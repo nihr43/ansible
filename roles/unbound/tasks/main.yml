@@ -21,7 +21,7 @@
  - name: check if records file exists
    stat:
     path: /usr/local/etc/unbound/records.conf
-    register: stat_result
+   register: stat_result
 
  - name: touch recrods file
    file:
