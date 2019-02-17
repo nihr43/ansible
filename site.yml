@@ -15,6 +15,10 @@
       #   roles:
       #    - jenkins_agent_alpine
 
+ - hosts: unbound
+   roles:
+    - unbound
+
  - hosts: etcd_nodes
    roles:
     - etcd
