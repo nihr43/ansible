@@ -30,8 +30,8 @@
    service: name=unbound enabled=yes
 
  - name: configure unbound
-   template: unbound.conf
-    src:
+   template:
+    src: unbound.conf
     dest: /usr/local/etc/unbound/unbound.conf
     owner: root
     group: wheel
