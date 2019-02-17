@@ -18,15 +18,15 @@
     group: wheel
     mode: 0644
 
-  - name: check if records file exists
-    stat:
-      path: /usr/local/etc/unbound/records.conf
+ - name: check if records file exists
+   stat:
+    path: /usr/local/etc/unbound/records.conf
     register: stat_result
 
-  - name: touch recrods file
-    file:
-      path: /usr/local/etc/unbound/records.conf
-      state: touch
+ - name: touch recrods file
+   file:
+    path: /usr/local/etc/unbound/records.conf
+    state: touch
     when: stat_result.stat.exists == False
 
  - name: land update job
