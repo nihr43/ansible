@@ -10,6 +10,7 @@ etcd_nodes
 dm_compute
 managed_hypervisor
 unbound
+haproxy_unbound
 
 [alpine_common:children]
 alpine_nodes
@@ -54,6 +55,10 @@ e38f-vmm
 10.0.0.10
 10.0.0.11
 10.0.0.12
+
+[haproxy_unbound]
+4480-unbound-haproxy carp_interface='vnet0' carp_vhid='5' carp_address='10.0.0.35' carp_role='primary' http_port='53' proxied_group='unbound'
+7a57-unbound-haproxy carp_interface='vnet0' carp_vhid='5' carp_address='10.0.0.35' carp_role='secondary' http_port='53' proxied_group='unbound'
 
 [managed_hypervisor]
 #27d3-dm-compute
