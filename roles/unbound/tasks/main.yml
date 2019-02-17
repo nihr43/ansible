@@ -1,0 +1,27 @@
+---
+ - name: install etcdctl, jq
+   pkgng: name=jq,coreos-etcd33 state=present
+
+ - name: create periodic minutely
+   file:
+    path: /etc/periodic/minutely
+    state: directory
+    owner: root
+    group: wheel
+    mode: 0755
+
+ - name: configure cron
+   template: 
+    src: crontab
+    dest: /etc/crontab
+    owner: root
+    group: wheel
+    mode: 0644
+
+ - name: land update job
+   template:
+    src: refresh_unbound.sh
+    dest: /etc/periodic/minutely/refresh_unbound.sh
+    owner: root
+    group: wheel
+    mode: 0744
