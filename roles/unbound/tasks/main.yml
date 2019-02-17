@@ -1,6 +1,6 @@
 ---
- - name: install etcdctl, jq
-   pkgng: name=jq,coreos-etcd33 state=present
+ - name: install etcdctl, jq, unbound
+   pkgng: name=jq,coreos-etcd33,unbound state=present
 
  - name: create periodic minutely
    file:
@@ -25,3 +25,34 @@
     owner: root
     group: wheel
     mode: 0744
+
+ - name: enable unbound
+   service: name=unbound enabled=yes
+
+ - name: configure unbound
+   template: unbound.conf
+    src:
+    dest: /usr/local/etc/unbound/unbound.conf
+    owner: root
+    group: wheel
+    mode: 0744
+   notify: restart unbound
+
+ - name: start unbound
+   service: name=unbound state=started
+
+ - name: configure haproxy primary CARP address
+   lineinfile:
+    path: /etc/rc.conf
+    regexp: '^ifconfig_{{ carp_interface }}_alias0='
+    line: 'ifconfig_{{ carp_interface }}_alias0="inet vhid {{ carp_vhid }} pass testpass alias {{ carp_address }}/32"'
+   when: carp_role == "primary"
+   notify: restart network
+
+ - name: configure haproxy secondary CARP address
+   lineinfile:
+    path: /etc/rc.conf
+    regexp: '^ifconfig_{{ carp_interface }}_alias0='
+    line: 'ifconfig_{{ carp_interface }}_alias0="inet vhid {{ carp_vhid }} advskew 50 pass testpass alias {{ carp_address }}/32"'
+   when: carp_role == "secondary"
+   notify: restart network
