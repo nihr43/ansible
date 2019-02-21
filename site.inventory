@@ -50,6 +50,24 @@ eee8-jenkins-agent
 ff1c-jenkins-agent
 e38f-vmm
 59eb-mysql
+03c7-chef-tomcat-az0
+0c24-chef-tomcat-az0
+1038-chef-mysql-az1
+11f6-chef-tomcat-az1
+2358-chef-haproxy-az0
+3089-chef-haproxy-az2
+31a3-chef-haproxy-az2
+392a-chef-mysql-az0
+3ec3-chef-tomcat-az2
+5354-chef-haproxy-az0
+56d5-chef-mysql-az2
+6f4c-chef-haproxy-az1
+7390-chef-tomcat-az2
+845a-chef-tomcat-az1
+847f-chef-haproxy-az1
+881d-chef-mysql-az1
+d69a-chef-mysql-az2
+f9ff-chef-mysql-az0
 
 [unbound]
 10.0.0.10 carp_interface='vnet0' carp_vhid='5' carp_address='10.0.0.2' carp_role='primary'
