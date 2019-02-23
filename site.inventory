@@ -103,7 +103,6 @@ a2af-minio
 [haproxy_minio]
 d9ed-minio-haproxy carp_interface='vnet0' carp_vhid='3' carp_address='10.0.0.33' carp_role='primary' http_port='9000' proxied_group='minio_nodes'
 4588-minio-haproxy carp_interface='vnet0' carp_vhid='3' carp_address='10.0.0.33' carp_role='secondary' http_port='9000' proxied_group='minio_nodes'
-05ea-minio-haproxy carp_interface='vnet0' carp_vhid='3' carp_address='10.0.0.33' carp_role='tertiary' http_port='9000' proxied_group='minio_nodes'
 
 [dm_compute]
 27d3-dm-compute

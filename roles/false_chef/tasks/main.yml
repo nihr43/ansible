@@ -1,0 +1,36 @@
+---
+ - name: install minio
+   pkgng: name=minio,minio-client state=present
+
+ - name: minio dir
+   file:
+    path: /var/db/minio
+    state: directory
+    owner: minio
+    group: minio
+    mode: 0750
+
+ - name: minio config dir
+   file:
+    path: /usr/local/etc/minio
+    state: directory
+    owner: minio
+    group: minio
+    mode: 0770
+   notify: restart minio
+
+ - name: enable minio
+   service: name=minio enabled=yes
+
+ - name: configure minio cluster
+   lineinfile:
+    path: /etc/rc.conf
+    regexp: "{{ item.regexp }}"
+    line: "{{ item.line }}"
+   with_items:
+     - { regexp: '^minio_disks=', line: 'minio_disks="{% for node in groups.minio_nodes %}http://{{ node }}:9000/var/db/minio{% if not loop.last %} {% endif %}{% endfor %}"' }
+     - { regexp: '^minio_env=', line: 'minio_env="{{ minio_keys }} MINIO_STORAGE_CLASS_STANDARD=EC:2"' }
+   notify: restart minio
+
+ - name: ensure minio is running
+   service: name=minio state=started

@@ -1,0 +1,93 @@
+#!/bin/bash
+#
+## this script falsifies a chef-client run.  it can be directed to pass or fail
+
+
+[ "$PASS" == "false" ] && {
+
+cat << EOF
+
+[2014-08-25T13:25:33-05:00] INFO: *** Chef 11.12.4 ***
+[2014-08-25T13:25:33-05:00] INFO: Chef-client pid: 14631
+[2014-08-25T13:25:51-05:00] INFO: Run List is [recipe[chef-client], recipe[ome_jrebel_license_server]]
+[2014-08-25T13:25:51-05:00] INFO: Run List expands to [chef-client, ome_jrebel_license_server]
+[2014-08-25T13:25:51-05:00] INFO: Starting Chef Run for ome-tools1.campus.ksu.edu
+[2014-08-25T13:25:51-05:00] INFO: Running start handlers
+[2014-08-25T13:25:51-05:00] INFO: Start handlers complete.
+[2014-08-25T13:25:52-05:00] INFO: HTTP Request Returned 404 Object Not Found:
+[2014-08-25T13:25:52-05:00] INFO: Loading cookbooks [java@1.22.0, ome_java@1.1.0, windows@1.12.6, 7-zip@1.0.2, chef_handler@1.1.4, ark@0.9.0, ome_jrebel_license_server@1.0.3, cron@1.2.4, chef-client@3.0.4]
+[2014-08-25T13:25:53-05:00] INFO: WindowsPackage light-weight resource already initialized -- overriding!
+[2014-08-25T13:25:54-05:00] INFO: Processing log[Found chef-client in /usr/bin/chef-client] action write (chef-client::init_service line 7)
+[2014-08-25T13:25:54-05:00] INFO: Found chef-client in /usr/bin/chef-client
+[2014-08-25T13:25:54-05:00] INFO: Processing directory[/var/run/chef] action create (chef-client::init_service line 77)
+[2014-08-25T13:25:54-05:00] INFO: Processing directory[/var/cache/chef] action create (chef-client::init_service line 77)
+[2014-08-25T13:25:54-05:00] INFO: Processing directory[/var/lib/chef] action create (chef-client::init_service line 77)
+[2014-08-25T13:25:54-05:00] INFO: Processing directory[/var/log/chef] action create (chef-client::init_service line 77)
+[2014-08-25T13:25:54-05:00] INFO: Processing directory[/etc/chef] action create (chef-client::init_service line 77)
+[2014-08-25T13:25:54-05:00] INFO: Processing template[/etc/init.d/chef-client] action create (chef-client::init_service line 18)
+[2014-08-25T13:25:54-05:00] INFO: Processing template[/etc/sysconfig/chef-client] action create (chef-client::init_service line 25)
+[2014-08-25T13:25:54-05:00] INFO: Processing service[chef-client] action enable (chef-client::init_service line 31)
+[2014-08-25T13:25:55-05:00] INFO: Processing service[chef-client] action start (chef-client::init_service line 31)
+[2014-08-25T13:25:56-05:00] INFO: Processing directory[/as/app/jrebel_license_server] action create (ome_jrebel_license_server::default line 26)
+[2014-08-25T13:25:56-05:00] INFO: Processing ark[2.2.0] action put (ome_jrebel_license_server::default line 32)
+[2014-08-25T13:25:56-05:00] INFO: Processing directory[/as/app/jrebel_license_server/2.2.0] action create (/var/chef/cache/cookbooks/ark/providers/default.rb line 114)
+[2014-08-25T13:25:56-05:00] INFO: Processing remote_file[/var/chef/cache/2.2.0.tar.gz] action create (/var/chef/cache/cookbooks/ark/providers/default.rb line 121)
+[2014-08-25T13:25:57-05:00] INFO: Processing execute[unpack /var/chef/cache/2.2.0.tar.gz] action nothing (/var/chef/cache/cookbooks/ark/providers/default.rb line 130)
+[2014-08-25T13:25:57-05:00] INFO: Processing execute[set owner on /as/app/jrebel_license_server/2.2.0] action nothing (/var/chef/cache/cookbooks/ark/providers/default.rb line 140)
+[2014-08-25T13:25:57-05:00] INFO: Processing template[/etc/init.d/jrebel-license-server] action create (ome_jrebel_license_server::default line 41)
+[2014-08-25T13:25:57-05:00] INFO: Processing service[jrebel-license-server] action enable (ome_jrebel_license_server::default line 53)
+[2014-08-25T13:25:58-05:00] INFO: Processing service[jrebel-license-server] action start (ome_jrebel_license_server::default line 53)
+[2014-08-25T13:25:58-05:00] INFO: service[jrebel-license-server] started
+[2014-08-25T13:26:05-05:00] INFO: HTTP Request Returned 500 Internal Server Error: internal service error
+[2014-08-25T13:26:05-05:00] ERROR: Running exception handlers
+[2014-08-25T13:26:05-05:00] ERROR: Exception handlers complete
+[2014-08-25T13:26:05-05:00] FATAL: Stacktrace dumped to /var/chef/cache/chef-stacktrace.out
+[2014-08-25T13:26:05-05:00] ERROR: 500 "Internal Server Error"
+[2014-08-25T13:26:06-05:00] ERROR: Chef::Exceptions::ChildConvergeError: Chef run process exited unsuccessfully (exit code 1)
+[2014-08-25T13:26:06-05:00] ERROR: Sleeping for 1800 seconds before trying again
+(END)
+
+EOF
+
+exit 1
+
+}
+
+[ "$PASS" == "true" ] && {
+
+cat << EOF
+
+[2014-08-25T13:25:33-05:00] INFO: *** Chef 11.12.4 ***
+[2014-08-25T13:25:33-05:00] INFO: Chef-client pid: 14631
+[2014-08-25T13:25:51-05:00] INFO: Run List is [recipe[chef-client], recipe[ome_jrebel_license_server]]
+[2014-08-25T13:25:51-05:00] INFO: Run List expands to [chef-client, ome_jrebel_license_server]
+[2014-08-25T13:25:51-05:00] INFO: Starting Chef Run for ome-tools1.campus.ksu.edu
+[2014-08-25T13:25:51-05:00] INFO: Running start handlers
+[2014-08-25T13:25:51-05:00] INFO: Start handlers complete.
+[2014-08-25T13:25:52-05:00] INFO: HTTP Request Returned 404 Object Not Found:
+[2014-08-25T13:25:52-05:00] INFO: Loading cookbooks [java@1.22.0, ome_java@1.1.0, windows@1.12.6, 7-zip@1.0.2, chef_handler@1.1.4, ark@0.9.0, ome_jrebel_license_server@1.0.3, cron@1.2.4, chef-client@3.0.4]
+[2014-08-25T13:25:53-05:00] INFO: WindowsPackage light-weight resource already initialized -- overriding!
+[2014-08-25T13:25:54-05:00] INFO: Processing log[Found chef-client in /usr/bin/chef-client] action write (chef-client::init_service line 7)
+[2014-08-25T13:25:54-05:00] INFO: Found chef-client in /usr/bin/chef-client
+[2014-08-25T13:25:54-05:00] INFO: Processing directory[/var/run/chef] action create (chef-client::init_service line 77)
+[2014-08-25T13:25:54-05:00] INFO: Processing directory[/var/cache/chef] action create (chef-client::init_service line 77)
+[2014-08-25T13:25:54-05:00] INFO: Processing directory[/var/lib/chef] action create (chef-client::init_service line 77)
+[2014-08-25T13:25:54-05:00] INFO: Processing directory[/var/log/chef] action create (chef-client::init_service line 77)
+[2014-08-25T13:25:54-05:00] INFO: Processing directory[/etc/chef] action create (chef-client::init_service line 77)
+[2014-08-25T13:25:54-05:00] INFO: Processing template[/etc/init.d/chef-client] action create (chef-client::init_service line 18)
+[2014-08-25T13:25:54-05:00] INFO: Processing template[/etc/sysconfig/chef-client] action create (chef-client::init_service line 25)
+[2014-08-25T13:25:54-05:00] INFO: Processing service[chef-client] action enable (chef-client::init_service line 31)
+[2014-08-25T13:25:55-05:00] INFO: Processing service[chef-client] action start (chef-client::init_service line 31)
+[2014-08-25T13:25:56-05:00] INFO: Processing directory[/as/app/jrebel_license_server] action create (ome_jrebel_license_server::default line 26)
+[2014-08-25T13:25:56-05:00] INFO: Processing ark[2.2.0] action put (ome_jrebel_license_server::default line 32)
+[2014-08-25T13:25:56-05:00] INFO: Processing directory[/as/app/jrebel_license_server/2.2.0] action create (/var/chef/cache/cookbooks/ark/providers/default.rb line 114)
+[2014-08-25T13:25:56-05:00] INFO: Processing remote_file[/var/chef/cache/2.2.0.tar.gz] action create (/var/chef/cache/cookbooks/ark/providers/default.rb line 121)
+[2014-08-25T13:25:57-05:00] INFO: Processing execute[unpack /var/chef/cache/2.2.0.tar.gz] action nothing (/var/chef/cache/cookbooks/ark/providers/default.rb line 130)
+[2014-08-25T13:25:57-05:00] INFO: Processing execute[set owner on /as/app/jrebel_license_server/2.2.0] action nothing (/var/chef/cache/cookbooks/ark/providers/default.rb line 140)
+[2014-08-25T13:25:57-05:00] Chef Client finished. [67/122 resources updated]
+
+EOF
+
+exit 0
+
+}
