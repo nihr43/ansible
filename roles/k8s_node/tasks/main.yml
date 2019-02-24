@@ -4,7 +4,7 @@
    lineinfile:
     path: /etc/fstab
     state: absent
-    regexp: '*swap*'
+    regexp: 'swap'
    register: fstab_contents
 
  - name: reboot if swap disabled
