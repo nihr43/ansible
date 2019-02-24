@@ -5,7 +5,7 @@
 
  - name: configure apk
    lineinfile:
-    path: /etc/selinux/config
+    path: /etc/apk/repositories
     line: 'http://mirror.leaseweb.com/alpine/v{{alpine_version.stdout}}/community'
 
  - name: install common packages
