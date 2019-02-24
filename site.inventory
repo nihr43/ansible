@@ -17,6 +17,8 @@ alpine_nodes
 
 [alpine_nodes]
 90d4-jenkins-agent-alpine
+1fae1e
+ce1660
 
 [hypervisors]
 #09f4-vmm
