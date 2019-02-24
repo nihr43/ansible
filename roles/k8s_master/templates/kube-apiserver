@@ -1,0 +1,27 @@
+#!/sbin/openrc-run
+# Copyright 2016 Alpine Linux
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
+depend() {
+  need net
+}
+
+start() {
+  ebegin "Starting $SVCNAME"
+  start-stop-daemon --start \
+    --pidfile /tmp/kube-apiserver.pid \
+    --user kubernetes \
+    --background \
+    --make-pidfile \
+    --exec /usr/bin/kube-apiserver -- \
+      --etcd-servers {% for node in groups[etcd_cluster] %}grpc://{{ node }}:2379{% if not loop.last %},{% endif %}{% endfor %}
+  eend $? "Failed to start kube-apiserver"
+}
+
+stop() {
+  ebegin "Stopping kube-apiserver"
+  start-stop-daemon --stop --pidfile /tmp/kube-apiserver.pid
+  eend $? "Failed to stop kube-apiserver"
+  rm -f /tmp/kube-apiserver.pid
+}
