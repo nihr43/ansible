@@ -15,10 +15,10 @@ k8s_etcd_nodes
 
 [alpine_common:children]
 alpine_nodes
+k8s_masters
 
 [alpine_nodes]
 90d4-jenkins-agent-alpine
-56b404
 
 [hypervisors]
 #09f4-vmm
@@ -64,6 +64,9 @@ e38f-vmm
 c0d8-etcd cluster_token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd_nodes'
 52f4-etcd cluster_token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd_nodes'
 6439-etcd cluster_token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd_nodes'
+
+[k8s_masters]
+56b404 etcd_cluster='k8s_etcd_nodes'
 
 [k8s_etcd_nodes]
 426b-k8s-etcd cluster_token='c5d7f01f-d21e-4e85-a4f5-34543e0d0959' mygroup='k8s_etcd_nodes'
