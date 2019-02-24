@@ -1,4 +1,17 @@
 ---
+
+ - name: disable swap
+   lineinfile:
+    path: /etc/fstab
+    state: absent
+    regexp: '*swap*'
+   register: fstab_contents
+
+ - name: reboot if swap disabled
+   reboot:
+    reboot_timeout: 120
+   when: fstab_contents.changed
+
  - name: configure apk
    lineinfile:
     path: /etc/apk/repositories
