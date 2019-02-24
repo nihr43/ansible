@@ -1,0 +1,29 @@
+#!/sbin/openrc-run
+# Copyright 2016 Alpine Linux
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
+depend() {
+  need net
+}
+
+start() {
+  ebegin "Starting kubelet"
+  start-stop-daemon --start \
+    --pidfile /tmp/kubelet.pid \
+    --user root \
+    --background \
+    --make-pidfile \
+    --exec /usr/bin/kubelet \
+    -- \
+      --kubeconfig /root/kubeconfig
+
+  eend $? "Failed to start kubelet"
+}
+
+stop() {
+  ebegin "Stopping kubelet"
+  start-stop-daemon --stop --pidfile /tmp/kubelet.pid
+  eend $? "Failed to stop kubelet"
+  rm -f /tmp/kubelet.pid
+}
