@@ -11,6 +11,14 @@
    user:
      name: kubernetes
 
+ - name: enforce kube /var/run
+   file:
+     path: /var/run/kubernetes
+     state: directory
+     mode: 0755
+     owner: kubernetes
+     group: kubernetes
+
  - name: place kube-apiserver init script
    template:
     src: kube-apiserver
