@@ -13,7 +13,7 @@
 
  - hosts: 56b404
    roles:
-    - k8s_masters
+    - k8s_master
 
       # - hosts: 90d4-jenkins-agent-alpine
       #   roles:
