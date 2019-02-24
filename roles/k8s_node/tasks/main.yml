@@ -7,19 +7,19 @@
     regexp: 'swap'
    register: task_result
 
-- name: Reboot immediately if there was a change.
-  shell: "sleep 5 && reboot"
-  async: 1
-  poll: 0
-  when: task_result is changed
+ - name: Reboot immediately if there was a change.
+   shell: "sleep 5 && reboot"
+   async: 1
+   poll: 0
+   when: task_result is changed
 
-- name: Wait for the reboot to complete if there was a change.
-  wait_for_connection:
+ - name: Wait for the reboot to complete if there was a change.
+   wait_for_connection:
     connect_timeout: 20
     sleep: 5
     delay: 5
     timeout: 300
-  when: task_result is changed
+   when: task_result is changed
 
  - name: configure apk
    lineinfile:
