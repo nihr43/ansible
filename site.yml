@@ -7,9 +7,9 @@
    roles:
     - managed_hypervisor
 
-      # - hosts: alpine_common
-      #   roles:
-      #    - alpine_common
+ - hosts: alpine_common
+   roles:
+    - alpine_common
 
       # - hosts: 90d4-jenkins-agent-alpine
       #   roles:
