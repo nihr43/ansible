@@ -20,3 +20,9 @@
     owner: root
     group: wheel
     mode: 0755
+
+ - name: enable and start kubelet
+   service:
+    name: kubelet
+    enabled: yes
+    state: started
