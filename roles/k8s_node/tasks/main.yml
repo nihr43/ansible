@@ -18,11 +18,3 @@
      mode: 0755
      owner: kubernetes
      group: kubernetes
-
- - name: place kube-apiserver init script
-   template:
-    src: kube-apiserver
-    dest: /etc/init.d/kube-apiserver
-    owner: root
-    group: wheel
-    mode: 0755
