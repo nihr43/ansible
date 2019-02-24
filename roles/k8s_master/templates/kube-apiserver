@@ -15,7 +15,7 @@ start() {
     --background \
     --make-pidfile \
     --exec /usr/bin/kube-apiserver -- \
-      --etcd-servers {% for node in groups[etcd_cluster] %}grpc://{{ node }}:2379{% if not loop.last %},{% endif %}{% endfor %}
+      --etcd-servers {% for node in groups[etcd_cluster] %}http://{{ node }}:2379{% if not loop.last %},{% endif %}{% endfor %}
 
   eend $? "Failed to start kube-apiserver"
 }
