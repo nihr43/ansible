@@ -35,6 +35,14 @@
     enabled: yes
     state: started
 
+ - name: place kubeconfig
+   template:
+    src: kubeconfig
+    dest: /root/kubeconfig
+    owner: root
+    group: wheel
+    mode: 0600
+
  - name: place kubelet init script
    template:
     src: kubelet
