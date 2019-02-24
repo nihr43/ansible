@@ -11,7 +11,7 @@
    roles:
     - alpine_common
 
- - hosts: 56b404
+ - hosts: k8s_masters
    roles:
     - k8s_master
 
