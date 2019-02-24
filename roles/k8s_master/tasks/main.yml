@@ -1,0 +1,8 @@
+---
+ - name: configure apk
+   lineinfile:
+    path: /etc/apk/repositories
+    line: 'http://mirror.leaseweb.com/alpine/edge/testing'
+
+ - name: install packages
+   apk: name=kubernetes state=present

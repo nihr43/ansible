@@ -11,6 +11,10 @@
    roles:
     - alpine_common
 
+ - hosts: 56b404
+   roles:
+    - k8s_masters
+
       # - hosts: 90d4-jenkins-agent-alpine
       #   roles:
       #    - jenkins_agent_alpine
