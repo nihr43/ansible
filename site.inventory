@@ -60,14 +60,14 @@ e38f-vmm
 544d-etcd-haproxy carp_interface='vnet0' carp_vhid='4' carp_address='10.0.0.34' carp_role='secondary' http_port='2379' proxied_group='dev_etcd_nodes'
 
 [dev_etcd_nodes]
-c0d8-etcd cluster-token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd_nodes'
-52f4-etcd cluster-token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd_nodes'
-6439-etcd cluster-token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd_nodes'
+c0d8-etcd cluster_token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd_nodes'
+52f4-etcd cluster_token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd_nodes'
+6439-etcd cluster_token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd_nodes'
 
 [k8s_etcd_nodes]
-426b-k8s-etcd cluster-token='c5d7f01f-d21e-4e85-a4f5-34543e0d0959' mygroup='k8s_cluster_nodes'
-581b-k8s-etcd cluster-token='c5d7f01f-d21e-4e85-a4f5-34543e0d0959' mygroup='k8s_cluster_nodes'
-8c51-k8s-etcd cluster-token='c5d7f01f-d21e-4e85-a4f5-34543e0d0959' mygroup='k8s_cluster_nodes'
+426b-k8s-etcd cluster_token='c5d7f01f-d21e-4e85-a4f5-34543e0d0959' mygroup='k8s_cluster_nodes'
+581b-k8s-etcd cluster_token='c5d7f01f-d21e-4e85-a4f5-34543e0d0959' mygroup='k8s_cluster_nodes'
+8c51-k8s-etcd cluster_token='c5d7f01f-d21e-4e85-a4f5-34543e0d0959' mygroup='k8s_cluster_nodes'
 
 [src_nodes]
 ef94-src
