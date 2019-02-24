@@ -5,4 +5,4 @@
  - name: configure apk
    shell: egrep -o "^[0-9]\.[0-9]" /etc/alpine-release
    register: alpine_version
-   debug: alpine_version.stdout
+   debug: msg={{alpine_version.stdout}}
