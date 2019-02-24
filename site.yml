@@ -19,7 +19,7 @@
    roles:
     - unbound
 
- - hosts: etcd_nodes
+ - hosts: dev_etcd_nodes
    roles:
     - etcd
 

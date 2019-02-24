@@ -6,11 +6,12 @@ minio_nodes
 elasticsearch_nodes
 src_nodes
 haproxy_etcd
-etcd_nodes
+dev_etcd_nodes
 dm_compute
 managed_hypervisor
 unbound
 haproxy_unbound
+k8s_etcd_nodes
 
 [alpine_common:children]
 alpine_nodes
@@ -32,11 +33,6 @@ alpine_nodes
 #3159-api etcd_cluster='1d21-api=http://1d21-api:2380,3159-api=http://3159-api:2380,7dd0-api=http://7dd0-api:2380,d2a1-api=http://d2a1-api:2380'
 #7dd0-api etcd_cluster='1d21-api=http://1d21-api:2380,3159-api=http://3159-api:2380,7dd0-api=http://7dd0-api:2380,d2a1-api=http://d2a1-api:2380'
 #d2a1-api etcd_cluster='1d21-api=http://1d21-api:2380,3159-api=http://3159-api:2380,7dd0-api=http://7dd0-api:2380,d2a1-api=http://d2a1-api:2380'
-#50df-logger-node
-#5328-logger-node
-#6eb8-logger-node
-#c629-logger-node
-#e124-logger-node
 016a-grafana
 16df-src-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.31' carp_role='primary' http_port='80' proxied_group='src_nodes'
 feee-src-haproxy carp_interface='vnet0' carp_vhid='1' carp_address='10.0.0.31' carp_role='secondary' http_port='80' proxied_group='src_nodes'
@@ -59,14 +55,17 @@ e38f-vmm
 [managed_hypervisor]
 #27d3-dm-compute
 
-[haproxy_etcd]
-971f-etcd-haproxy carp_interface='vnet0' carp_vhid='4' carp_address='10.0.0.34' carp_role='primary' http_port='2379' proxied_group='etcd_nodes'
-544d-etcd-haproxy carp_interface='vnet0' carp_vhid='4' carp_address='10.0.0.34' carp_role='secondary' http_port='2379' proxied_group='etcd_nodes'
+[haproxy_dev_etcd]
+971f-etcd-haproxy carp_interface='vnet0' carp_vhid='4' carp_address='10.0.0.34' carp_role='primary' http_port='2379' proxied_group='dev_etcd_nodes'
+544d-etcd-haproxy carp_interface='vnet0' carp_vhid='4' carp_address='10.0.0.34' carp_role='secondary' http_port='2379' proxied_group='dev_etcd_nodes'
 
-[etcd_nodes]
-c0d8-etcd
-52f4-etcd
-6439-etcd
+[dev_etcd_nodes]
+c0d8-etcd cluster-token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd_nodes'
+52f4-etcd cluster-token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd_nodes'
+6439-etcd cluster-token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd_nodes'
+
+[k8s_etcd_nodes]
+
 
 [src_nodes]
 ef94-src
