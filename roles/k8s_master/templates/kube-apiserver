@@ -8,7 +8,7 @@ depend() {
 }
 
 start() {
-  ebegin "Starting $SVCNAME"
+  ebegin "Starting kube-apiserver"
   start-stop-daemon --start \
     --pidfile /tmp/kube-apiserver.pid \
     --user kubernetes \
