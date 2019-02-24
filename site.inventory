@@ -47,6 +47,7 @@ eee8-jenkins-agent
 ff1c-jenkins-agent
 e38f-vmm
 59eb-mysql
+10.0.0.21
 
 [unbound]
 10.0.0.10 carp_interface='vnet0' carp_vhid='5' carp_address='10.0.0.2' carp_role='primary'

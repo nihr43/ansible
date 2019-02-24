@@ -31,7 +31,7 @@
    roles:
     - minio
 
- - hosts: e38f-vmm
+ - hosts: 10.0.0.21, e38f-vmm
    roles:
     - vm_bhyve
 
