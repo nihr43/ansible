@@ -71,6 +71,7 @@ c0d8-etcd cluster_token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd
 
 [k8s_nodes]
 b4ca-k8s-node k8s_master='k8s_masters'
+e5f6-k8s-node k8s_master='k8s_masters'
 7703c2 k8s_master='k8s_masters'
 46df9a k8s_master='k8s_masters'
 
