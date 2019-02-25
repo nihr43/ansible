@@ -17,8 +17,8 @@ start() {
     --exec /usr/bin/kube-apiserver \
     -- \
       --etcd-servers {% for node in groups[etcd_cluster] %}http://{{ node }}:2379{% if not loop.last %},{% endif %}{% endfor %} \
-      --insecure-bind-address=0.0.0.0
-
+      --insecure-bind-address=0.0.0.0 \
+      --service-account-key-file=/home/kubernetes/serviceaccount.key
   eend $? "Failed to start kube-apiserver"
 }
 
