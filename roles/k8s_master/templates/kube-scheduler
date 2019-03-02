@@ -1,0 +1,28 @@
+#!/sbin/openrc-run
+# Copyright 2016 Alpine Linux
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
+depend() {
+  need net
+}
+
+start() {
+  ebegin "Starting kube-scheduler"
+  start-stop-daemon --start \
+    --pidfile /tmp/kube-scheduler.pid \
+    --user kubernetes \
+    --background \
+    --make-pidfile \
+    --exec /usr/bin/kube-scheduler \
+    -- \
+      --master 127.0.0.1:8080 \
+  eend $? "Failed to start kube-scheduler"
+}
+
+stop() {
+  ebegin "Stopping kube-scheduler"
+  start-stop-daemon --stop --pidfile /tmp/kube-scheduler.pid
+  eend $? "Failed to stop kube-scheduler"
+  rm -f /tmp/kube-scheduler.pid
+}
