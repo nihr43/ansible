@@ -28,7 +28,7 @@
     mode: 0755
 
  - name: place kube-scheduler init
-    template:
+   template:
     src: kube-scheduler
     dest: /etc/init.d/kube-scheduler
     owner: root
