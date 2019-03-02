@@ -19,19 +19,23 @@
      owner: kubernetes
      group: kubernetes
 
- - name: place k8s init scripts
+ - name: place kube-apiserver init
    template:
     src: kube-apiserver
     dest: /etc/init.d/kube-apiserver
     owner: root
     group: wheel
     mode: 0755
-   template:
+
+ - name: place kube-scheduler init
+    template:
     src: kube-scheduler
     dest: /etc/init.d/kube-scheduler
     owner: root
     group: wheel
     mode: 0755
+
+ - name: place kube-controller-manager init
    template:
     src: kube-controller-manager
     dest: /etc/init.d/kube-controller-manager
