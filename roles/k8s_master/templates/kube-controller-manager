@@ -17,6 +17,7 @@ start() {
     --exec /usr/bin/kube-controller-manager \
     -- \
       --master 127.0.0.1:8080 \
+      --service-account-private-key-file=/home/kubernetes/serviceaccount.key
   eend $? "Failed to start kube-controller-manager"
 }
 
