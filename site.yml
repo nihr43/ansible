@@ -58,13 +58,3 @@
  - hosts: 6745-src, ef94-src, ff0b-src
    roles:
     - src 
-
- - hosts: 1d21-api, 3159-api, 7dd0-api, d2a1-api
-   roles:
-    - dm_router
-    - etcd
-    - minio
-
- - hosts: 09f4-vmm, 2ab1-vmm, 2ed4-vmm, 4473-vmm, 5e09-vmm, f7e3-vmm
-   roles:
-    - dm_provider

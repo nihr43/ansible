@@ -43,13 +43,19 @@
     group: wheel
     mode: 0600
 
- - name: place kubelet init script
+ - name: place config files
    template:
     src: kubelet
     dest: /etc/init.d/kubelet
     owner: root
     group: wheel
     mode: 0755
+   template:
+    src: docker
+    dest: /etc/conf.d/docker
+    owner: root
+    group: wheel
+    mode: 0644
 
  - name: enable and start kubelet
    service:
