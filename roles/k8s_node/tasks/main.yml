@@ -37,6 +37,7 @@
     owner: root
     group: wheel
     mode: 0755
+   notify: restart kubelet
 
  - name: place docker conf
    template:
@@ -45,6 +46,7 @@
     owner: root
     group: wheel
     mode: 0644
+   notify: restart docker
 
  - name: enable and start kubelet
    service:
