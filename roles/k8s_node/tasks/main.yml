@@ -54,6 +54,21 @@
     enabled: yes
     state: started
 
+ - name: configure bird to advertise docker subnet
+   template: 
+    src: bird.conf
+    dest: /etc/bird.conf
+    owner: root
+    group: wheel
+    mode: 0644
+   notify: restart bird
+
+ - name: enable bird
+   service:
+    name: bird
+    enabled: yes
+    state: started
+
  - name: Reboot immediately if there was a change.
    shell: "sleep 5 && reboot"
    async: 1
