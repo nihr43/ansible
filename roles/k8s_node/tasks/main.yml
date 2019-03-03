@@ -27,7 +27,7 @@
     line: 'http://mirror.leaseweb.com/alpine/edge/testing'
 
  - name: install packages
-   apk: name=kubernetes,docker state=present
+   apk: name=kubernetes,docker,bird state=present
 
  - name: enable docker
    service:
