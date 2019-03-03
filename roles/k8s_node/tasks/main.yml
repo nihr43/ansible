@@ -42,20 +42,25 @@
     owner: root
     group: wheel
     mode: 0600
+   notify: restart kubelet
 
- - name: place config files
+ - name: place kubleconf
    template:
     src: kubelet
     dest: /etc/init.d/kubelet
     owner: root
     group: wheel
     mode: 0755
+   notify: restart kubelet
+
+ - name: place docker conf
    template:
     src: docker
     dest: /etc/conf.d/docker
     owner: root
     group: wheel
     mode: 0644
+   notify: restart docker
 
  - name: enable and start kubelet
    service:

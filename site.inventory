@@ -70,9 +70,9 @@ c0d8-etcd cluster_token='38ae8726-8e20-43fe-9605-5fe97a347c24' mygroup='dev_etcd
 5a99-k8s-master etcd_cluster='k8s_etcd_nodes'
 
 [k8s_nodes]
-850c-k8s-node k8s_master='k8s_masters'
-d6f4-k8s-node k8s_master='k8s_masters'
-e93f-k8s-node k8s_master='k8s_masters'
+850c-k8s-node k8s_master='k8s_masters' docker_net="10.0.1.1/24"
+d6f4-k8s-node k8s_master='k8s_masters' docker_net="10.0.2.1/24"
+e93f-k8s-node k8s_master='k8s_masters' docker_net="10.0.3.1/24"
 
 [k8s_etcd_nodes]
 426b-k8s-etcd cluster_token='c5d7f01f-d21e-4e85-a4f5-34543e0d0959' mygroup='k8s_etcd_nodes'
