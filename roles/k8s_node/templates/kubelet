@@ -10,6 +10,7 @@ depend() {
 
 start() {
   ebegin "Starting kubelet"
+  sleep 10
   start-stop-daemon --start \
     --pidfile /tmp/kubelet.pid \
     --user root \

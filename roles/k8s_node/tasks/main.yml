@@ -5,13 +5,13 @@
     path: /etc/fstab
     state: absent
     regexp: 'swap'
-   register: task_result
+   register: trigger_reboot
 
  - name: Reboot immediately if there was a change.
    shell: "sleep 5 && reboot"
    async: 1
    poll: 0
-   when: task_result is changed
+   when: tigger_reboot is changed
 
  - name: Wait for the reboot to complete if there was a change.
    wait_for_connection:
@@ -19,7 +19,7 @@
     sleep: 5
     delay: 5
     timeout: 300
-   when: task_result is changed
+   when: trigger_reboot is changed
 
  - name: configure apk
    lineinfile:
@@ -51,7 +51,7 @@
     owner: root
     group: wheel
     mode: 0755
-   notify: restart kubelet
+   register: trigger_reboot
 
  - name: place docker conf
    template:
@@ -60,10 +60,24 @@
     owner: root
     group: wheel
     mode: 0644
-   notify: restart docker
+   register: trigger_reboot
 
  - name: enable and start kubelet
    service:
     name: kubelet
     enabled: yes
     state: started
+
+ - name: Reboot immediately if there was a change.
+   shell: "sleep 5 && reboot"
+   async: 1
+   poll: 0
+   when: tigger_reboot is changed
+
+ - name: Wait for the reboot to complete if there was a change.
+   wait_for_connection:
+    connect_timeout: 20
+    sleep: 5
+    delay: 5
+    timeout: 300
+   when: trigger_reboot is changed
