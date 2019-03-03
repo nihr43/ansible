@@ -37,7 +37,6 @@
     owner: root
     group: wheel
     mode: 0755
-   register: trigger_reboot
 
  - name: place docker conf
    template:
@@ -46,7 +45,6 @@
     owner: root
     group: wheel
     mode: 0644
-   register: trigger_reboot
 
  - name: enable and start kubelet
    service:
