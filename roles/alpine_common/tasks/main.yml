@@ -2,6 +2,7 @@
  - name: get alpine version
    shell: egrep -o "^[0-9]\.[0-9]" /etc/alpine-release
    register: alpine_version
+   changed_when: false
 
  - name: configure apk
    lineinfile:
