@@ -5,6 +5,7 @@
 
 depend() {
   need net
+  need docker
 }
 
 start() {
