@@ -63,6 +63,14 @@
     mode: 0644
    notify: restart bird
 
+ - name: enable routing
+   template:
+    src: ip_forward
+    dest: /proc/sys/net/ipv4/ip_forward
+    owner: root
+    group: wheel
+    mode: 0644
+
  - name: enable bird
    service:
     name: bird
