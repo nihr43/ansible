@@ -20,7 +20,7 @@
 #DOCKERD_BINARY="/usr/bin/dockerd"
 
 # any other random options you want to pass to docker
-DOCKER_OPTS="--bip={{ docker_net }} --mtu=1500 --insecure-registry=http://10.0.0.129:5000"
+DOCKER_OPTS="--bip={{ docker_net }} --mtu=1500 --insecure-registry=http://10.0.0.129:5000 --ip-masq=false"
 
 # disable grsecurity features
 #disable_grsec="chroot_deny_chmod chroot_deny_mknod"
