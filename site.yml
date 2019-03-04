@@ -11,6 +11,10 @@
    roles:
     - alpine_common
 
+ - hosts: rethinkdb_cluster
+   roles:
+    - rethinkdb
+
  - hosts: k8s_masters
    roles:
     - k8s_master
