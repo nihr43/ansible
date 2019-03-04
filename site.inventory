@@ -5,7 +5,6 @@ haproxy_minio
 minio_nodes
 elasticsearch_nodes
 src_nodes
-haproxy_etcd
 dev_etcd_nodes
 dm_compute
 managed_hypervisor
