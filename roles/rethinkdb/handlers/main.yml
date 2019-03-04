@@ -1,0 +1,5 @@
+---
+ - name: restart rethinkdb
+   service: name=rethinkdb state=restarted
+   listen: "restart rethinkdb"
+
