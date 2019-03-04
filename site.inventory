@@ -9,7 +9,6 @@ dev_etcd_nodes
 dm_compute
 managed_hypervisor
 unbound
-haproxy_unbound
 k8s_etcd_nodes
 
 [alpine_common:children]
