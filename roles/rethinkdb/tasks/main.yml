@@ -5,11 +5,19 @@
  - name: place rethink conf
    template:
     src: default.conf
-    dest: /etc/rethinkdb/default.conf
+    dest: /etc/rethinkdb/instances.d/default.conf
     owner: root
     group: wheel
     mode: 0644
    notify: restart rethinkdb
+
+ - name: place rethink init
+   template:
+    src: rethinkdb
+    dest: /etc/init.d/rethinkdb
+    owner: root
+    group: wheel
+    mode: 0755
 
  - name: enable rethinkdb
    service:
