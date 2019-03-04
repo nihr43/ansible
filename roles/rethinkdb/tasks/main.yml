@@ -2,6 +2,10 @@
  - name: install packages
    apk: name=rethinkdb state=present
 
+ - name: create jenkins service account
+   user:
+     name: jenkins
+
  - name: place rethink conf
    template:
     src: default.conf
