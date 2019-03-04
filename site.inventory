@@ -15,10 +15,10 @@ k8s_etcd_nodes
 alpine_nodes
 k8s_masters
 k8s_nodes
-5f19-rethinkdb
 
 [alpine_nodes]
 90d4-jenkins-agent-alpine
+5f19-rethinkdb
 
 [hypervisors]
 #09f4-vmm
